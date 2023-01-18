@@ -287,7 +287,10 @@ public class DatabaseConnection {
             cs.setInt(2,in_amount_of_tickets);
             cs.setInt(3,in_amount_of_reduced_tickets);
             cs.setLong(4,in_id_seance);
-            cs.setLong(5,in_id_customer);
+            if(in_id_customer!=0)
+                cs.setLong(5,in_id_customer);
+            else
+                cs.setNull(5, Types.NUMERIC);
 
             cs.execute();
             cs.close();

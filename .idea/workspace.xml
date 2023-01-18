@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="nie dzila ostatni select">
+    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="chyba dziala">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/RegistrationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/RegistrationView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,24 +37,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/48602/Desktop/Sem 5/BazyDanych2/ojdbc11.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/48602/Desktop/Sem 5/BazyDanych2/ojdbc11.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\48602\Desktop\Sem 5\BazyDanych2\Kod\Cinema\cinema\src\main\java" />
@@ -78,7 +75,7 @@
       <workItem from="1674001227177" duration="7575000" />
       <workItem from="1674038153165" duration="2161000" />
       <workItem from="1674041591565" duration="466000" />
-      <workItem from="1674053610297" duration="27798000" />
+      <workItem from="1674053610297" duration="28675000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -150,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674077501855</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="chyba dziala">
+      <created>1674084403841</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674084403841</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +176,8 @@
     <MESSAGE value="dziala ale bez klasy abs lub interf" />
     <MESSAGE value="dziala" />
     <MESSAGE value="nie dzila ostatni select" />
-    <option name="LAST_COMMIT_MESSAGE" value="nie dzila ostatni select" />
+    <MESSAGE value="chyba dziala" />
+    <option name="LAST_COMMIT_MESSAGE" value="chyba dziala" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

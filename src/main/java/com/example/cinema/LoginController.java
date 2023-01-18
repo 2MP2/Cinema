@@ -47,7 +47,8 @@ public class LoginController implements Initializable {
             }catch (Exception e){
                 id = 0;
                 errorLabel.setVisible(true);
-                errorLabel.setText("Błąd");
+                errorLabel.setText("Błąd " + passwordTextField.getText());
+                System.out.println(e.getMessage());
             }
 
             if(id>0){ //warunek zawierajace metode z databes logowania
@@ -76,6 +77,10 @@ public class LoginController implements Initializable {
             if(id>0){ //warunek zawierajace metode z databes logowania
                 root = FXMLLoader.load(getClass().getResource("MainEmployeeView.fxml"));
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+                model.setId(id);
+                model.setLogin(loginTextField.getText());
+
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
