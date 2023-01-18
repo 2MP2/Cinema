@@ -35,7 +35,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ChoiceBox layoutX="188.0" layoutY="230.0" prefHeight="27.0" prefWidth="223.0" />
+      <ChoiceBox fx:id="choiceBox" layoutX="188.0" layoutY="230.0" prefHeight="27.0" prefWidth="223.0" />
       <PasswordField fx:id="passwordTextField" layoutX="188.0" layoutY="180.0">
          <font>
             <Font size="18.0" />
@@ -47,7 +47,7 @@
          </font>
       </Label>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#goToMenu" text="Powrót do Menu" />
-      <Label layoutX="231.0" layoutY="314.0" text="Błędny login lub hasło" textFill="RED" visible="false">
+      <Label fx:id="errorLabel" layoutX="231.0" layoutY="314.0" text="Błędny login lub hasło" textFill="RED" visible="false">
          <font>
             <Font size="14.0" />
          </font>

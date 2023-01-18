@@ -29,7 +29,7 @@ public class StartController implements Initializable{
     @FXML
     ListView <String> seancesListView;
 
-     void fillList(){
+     private void fillList(){
         List<Seances> listS = model.getDatabase().getSeancesList();
         List<Movies> listM = model.getDatabase().getMoviesList();
 
