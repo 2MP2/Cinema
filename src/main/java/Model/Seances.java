@@ -65,13 +65,13 @@ public class Seances {
 
     @Override
     public String toString() {
-        return "Seances{" +
-                "id_seance=" + id_seance +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
-                ", ticket_price=" + ticket_price +
-                ", id_movie=" + id_movie +
-                ", id_screening_room=" + id_screening_room +
-                '}';
+        return
+                " " + id_seance +
+                " " + start_time +
+                " " + end_time +
+                " " + ticket_price +
+                " " + id_movie +
+                " " + id_screening_room;
+
     }
 }
