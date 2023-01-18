@@ -38,8 +38,9 @@ public class LoginController{
     }
 
     public static void setModel(Model model) {
-        if(model != null)
+        if(LoginController.model != null)
             throw new IllegalStateException("Model can only be initialized once");
+
         LoginController.model = model;
     }
 }

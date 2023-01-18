@@ -40,8 +40,9 @@ public class RegistrationController{
     }
 
     public static void setModel(Model model) {
-        if(model != null)
+        if(RegistrationController.model != null)
             throw new IllegalStateException("Model can only be initialized once");
+
         RegistrationController.model = model;
     }
 }

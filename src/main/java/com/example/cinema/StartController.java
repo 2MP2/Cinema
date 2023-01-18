@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 
 public class StartController implements Initializable{
-    private static  Model model = null;
+    private static  Model model;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -86,7 +86,7 @@ public class StartController implements Initializable{
 
     public static void setModel(Model model) {
         if(StartController.model != null)
-            System.out.println("CCCC");
+            throw new IllegalStateException("Model can only be initialized once");
 
         StartController.model = model;
     }

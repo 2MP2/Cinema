@@ -19,8 +19,8 @@ public class Main extends Application {
         Parent root;
 
         StartController.setModel(model);
-        //RegistrationController.setModel(model);
-        //LoginController.setModel(model);
+        RegistrationController.setModel(model);
+        LoginController.setModel(model);
 
         FXMLLoader starViewLoader = new FXMLLoader(Main.class.getResource("StartView.fxml"));
         root = starViewLoader.load();
