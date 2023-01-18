@@ -9,22 +9,22 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.RegistrationController">
    <children>
-      <Label layoutX="167.0" layoutY="100.0" text="Login:">
+      <Label layoutX="160.0" layoutY="100.0" text="*Login:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="167.0" layoutY="147.0" text="Hasło:">
+      <Label layoutX="156.0" layoutY="147.0" text="*Hasło:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="175.0" layoutY="192.0" text="Imię:">
+      <Label layoutX="169.0" layoutY="192.0" text="*Imię:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="135.0" layoutY="238.0" text="Nazwisko:">
+      <Label layoutX="128.0" layoutY="238.0" text="*Nazwisko:">
          <font>
             <Font size="18.0" />
          </font>
@@ -75,5 +75,6 @@
          </font>
       </Button>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#goToMenu" text="Powrót do menu" />
+      <Label layoutX="104.0" layoutY="320.0" prefHeight="18.0" prefWidth="129.0" text="* - pola obowiązkowe" />
    </children>
 </AnchorPane>

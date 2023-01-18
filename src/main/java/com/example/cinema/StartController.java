@@ -27,7 +27,7 @@ public class StartController implements Initializable{
     private Scene scene;
     private Parent root;
     @FXML
-    ListView <String> seancesListView;
+    private ListView <String> seancesListView;
 
      private void fillList(){
         List<Seances> listS = model.getDatabase().getSeancesList();

@@ -25,11 +25,11 @@ public class LoginController implements Initializable {
     private Scene scene;
     private Parent root;
     @FXML
-    TextField loginTextField,passwordTextField;
+    private TextField loginTextField,passwordTextField;
     @FXML
-    Label errorLabel;
+    private Label errorLabel;
     @FXML
-    ChoiceBox <String> choiceBox;
+    private ChoiceBox <String> choiceBox;
 
     @FXML
     private void login(ActionEvent actionEvent) throws IOException {
@@ -40,30 +40,41 @@ public class LoginController implements Initializable {
             errorLabel.setText("Wybierz opcje logowania");
         }
         else if(choiceBox.getSelectionModel().getSelectedItem().equals("Klient")) {
-            if(true){ //warunek zawierajace metode z databes logowania
+            boolean isLogin;
+
+            try {
+                isLogin=true;
+            }catch (Exception e){
+                isLogin = false;
+                errorLabel.setVisible(true);
+                errorLabel.setText("Błąd");
+            }
+
+            if(isLogin){ //warunek zawierajace metode z databes logowania
                 root = FXMLLoader.load(getClass().getResource("MainCustomerView.fxml"));
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
             }
-            else{
-                errorLabel.setVisible(true);
-                errorLabel.setText("Błędny login lub hasło");
-            }
         }
         else if(choiceBox.getSelectionModel().getSelectedItem().equals("Pracownik")){
+            boolean isLogin;
 
-            if(true){ //warunek zawierajace metode z databes logowania
+            try {
+                isLogin=true;
+            }catch (Exception e){
+                isLogin = false;
+                errorLabel.setVisible(true);
+                errorLabel.setText("Błąd");
+            }
+
+            if(isLogin){ //warunek zawierajace metode z databes logowania
                 root = FXMLLoader.load(getClass().getResource("MainEmployeeView.fxml"));
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            }
-            else{
-                errorLabel.setVisible(true);
-                errorLabel.setText("Błędny login lub hasło");
             }
 
         }
