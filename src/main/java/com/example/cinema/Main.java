@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        DatabaseConnection databaseConnection = new DatabaseConnection("jdbc:oracle:thin:@192.168.0.178:1521:xe","c##cinema_user","cinema_user");
+        DatabaseConnection databaseConnection = new DatabaseConnection("jdbc:oracle:thin:@DESKTOP-NJJMCEP:1521:xe","c##cinema_user","cinema_user");
         Model model = new Model(databaseConnection);
         Parent root;
 
@@ -41,8 +41,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        //TestReczny testReczny = new TestReczny();
-        //testReczny.test();
+        TestReczny testReczny = new TestReczny();
+        testReczny.test();
         launch();
     }
 }

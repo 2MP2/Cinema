@@ -14,9 +14,10 @@ public class DatabaseConnection {
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try {
+                System.out.println("ZAMKNIETO BAZE");
                 con.close();
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                System.out.println("ERROR !!!!NIE ZAMKNIETO BAZY");
             }
         }));
     }

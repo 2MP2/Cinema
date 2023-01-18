@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TestReczny {
     public void test() throws SQLException {
-        DatabaseConnection dbc = new DatabaseConnection("jdbc:oracle:thin:@192.168.0.178:1521:xe","c##cinema_user","cinema_user");
+        DatabaseConnection dbc = new DatabaseConnection("jdbc:oracle:thin:@DESKTOP-NJJMCEP:1521:xe","c##cinema_user","cinema_user");
 
         System.out.println("-------------------1------------------------------");
         dbc.insertMovie("Superman",140, "xx distributor", new Timestamp(2022,2,1,12,0,0,0),new Timestamp(2022,2,1,12,0,0,0), 'D', false);

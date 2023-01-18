@@ -30,7 +30,6 @@ public class RegistrationController implements InitModel{
 
         this.model = model;
         databaseConnection = model.getDatabase();
-
     }
 
     @FXML
@@ -42,13 +41,12 @@ public class RegistrationController implements InitModel{
     public void goToMenu(ActionEvent actionEvent) throws IOException {
         fxmlLoader = new FXMLLoader(getClass().getResource("StartView.fxml"));
         root = fxmlLoader.load();
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        System.out.println("XXXXXXXXXXXXX");
+
         StartController startController = fxmlLoader.getController();
         startController.initModel(model);
-        System.out.println("XXXXXXXXXXXXX");
-        //startController.fillList();
+
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
