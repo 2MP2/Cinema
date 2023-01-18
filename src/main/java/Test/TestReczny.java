@@ -83,9 +83,10 @@ public class TestReczny {
             List<TakenSeats> list7 = dbc.getTakenSeatsList();
             System.out.println("-------------------24------------------------------");
             List<Transactions> list8 = dbc.getTransactionsList();
-            System.out.println("-------------------25------------------------------");
-            List<TakenSeats> list9 = dbc.getTakenSeatsList(1);
+            //System.out.println("-------------------25------------------------------");
+            //List<TakenSeats> list9 = dbc.getTakenSeatsList(1);
 
+            System.out.println(dbc.logInEmployee("empl1","seds3"));
 
 
             System.out.println(list1.toString());
@@ -96,7 +97,7 @@ public class TestReczny {
             System.out.println(list6.toString());
             System.out.println(list7.toString());
             System.out.println(list8.toString());
-            System.out.println(list9.toString());
+            //System.out.println(list9.toString());
 
         }catch (Exception e){
             System.out.println(e.getMessage());

@@ -456,12 +456,49 @@ public class DatabaseConnection {
         return list;
     }
 
-    public List<TakenSeats> getTakenSeatsList(long in_id_seat){
+    public long logInCustomer(String in_login, String in_password) throws SQLException
+    {
+        long id;
+        String sql_string = "begin ? := c##cinema.logInCustomer(?,?); end;";
+
+        CallableStatement cs = con.prepareCall(sql_string);
+        cs.registerOutParameter(1,Types.NUMERIC);
+        cs.setString(2, in_login);
+        cs.setString(3, in_password);
+        cs.execute();
+
+        id = cs.getLong(1);
+        cs.close();
+
+        return id;
+
+    }
+
+    public long logInEmployee(String in_login, String in_password) throws SQLException
+    {
+        long id;
+        String sql_string = "begin ? := c##cinema.logInEmployee(?,?); end;";
+
+        CallableStatement cs = con.prepareCall(sql_string);
+        cs.registerOutParameter(1,Types.NUMERIC);
+        cs.setString(2, in_login);
+        cs.setString(3, in_password);
+        cs.execute();
+
+        id = cs.getLong(1);
+        cs.close();
+
+        return id;
+
+    }
+
+    public List<TakenSeats> getTakenSeatsList(long in_id_seat){ // nie dziala
         List <TakenSeats> list= new ArrayList<>();
 
         try {
-            Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.TRANSACTIONS WHERE id_seat = "+in_id_seat);
+            PreparedStatement statement = con.prepareStatement("SELECT * FROM c##cinema.TRANSACTIONS WHERE id_seat = ?");
+            statement.setLong(1,in_id_seat);
+            ResultSet rs = statement.executeQuery();
 
             while (rs.next())
             {

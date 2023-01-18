@@ -27,7 +27,7 @@ public class MainCustomerController {
 
     @FXML
     private void logout(ActionEvent actionEvent) throws IOException {
-        model.setCurrentCustomer(null);
+        model.clear();
 
         fxmlLoader = new FXMLLoader(getClass().getResource("StartView.fxml"));
         root = fxmlLoader.load();

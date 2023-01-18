@@ -40,36 +40,40 @@ public class LoginController implements Initializable {
             errorLabel.setText("Wybierz opcje logowania");
         }
         else if(choiceBox.getSelectionModel().getSelectedItem().equals("Klient")) {
-            boolean isLogin;
+            long id;
 
             try {
-                isLogin=true;
+                id = model.getDatabase().logInCustomer(loginTextField.getText(),passwordTextField.getText());
             }catch (Exception e){
-                isLogin = false;
+                id = 0;
                 errorLabel.setVisible(true);
                 errorLabel.setText("Błąd");
             }
 
-            if(isLogin){ //warunek zawierajace metode z databes logowania
+            if(id>0){ //warunek zawierajace metode z databes logowania
                 root = FXMLLoader.load(getClass().getResource("MainCustomerView.fxml"));
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+                model.setId(id);
+                model.setLogin(loginTextField.getText());
+
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
             }
         }
         else if(choiceBox.getSelectionModel().getSelectedItem().equals("Pracownik")){
-            boolean isLogin;
+            long id;
 
             try {
-                isLogin=true;
+                id = model.getDatabase().logInEmployee(loginTextField.getText(),passwordTextField.getText());
             }catch (Exception e){
-                isLogin = false;
+                id = 0;
                 errorLabel.setVisible(true);
                 errorLabel.setText("Błąd");
             }
 
-            if(isLogin){ //warunek zawierajace metode z databes logowania
+            if(id>0){ //warunek zawierajace metode z databes logowania
                 root = FXMLLoader.load(getClass().getResource("MainEmployeeView.fxml"));
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);

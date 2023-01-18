@@ -1,33 +1,34 @@
 package com.example.cinema;
 
 import Controller.DatabaseConnection;
-import Model.Customers;
-import Model.Employees;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 
 public class Model {
 
-    private Customers currentCustomer;
+    private long id = 0;
+    private String login = "";
 
-    public Customers getCurrentCustomer() {
-        return currentCustomer;
+    public long getId() {
+        return id;
     }
 
-    public void setCurrentCustomer(Customers currentCustomer) {
-        this.currentCustomer = currentCustomer;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public Employees getCurrentEmployee() {
-        return currentEmployee;
+    public String getLogin() {
+        return login;
     }
 
-    public void setCurrentEmployee(Employees currentEmployee) {
-        this.currentEmployee = currentEmployee;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    private Employees currentEmployee;
-    private DatabaseConnection database;
+    public void clear(){
+        id = 0;
+        login ="";
+    }
+
+    private final DatabaseConnection database;
 
     public Model(DatabaseConnection databaseConnection) {
         database = databaseConnection;
