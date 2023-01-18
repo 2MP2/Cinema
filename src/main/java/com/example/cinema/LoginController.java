@@ -3,16 +3,15 @@ package com.example.cinema;
 import Controller.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class StartController implements InitModel{
+public class LoginController implements InitModel{
     Model model;
     DatabaseConnection databaseConnection;
-
     @FXML
-    ListView <String> seancesListView;
+    TextField loginTextField,passwordTextField;
 
     @Override
     public void initModel(Model model) {
@@ -23,16 +22,14 @@ public class StartController implements InitModel{
         this.model = model;
         databaseConnection = model.getDatabase();
 
-
     }
 
     @FXML
-    private void goToLogin(ActionEvent event) throws IOException{
+    public void login(ActionEvent actionEvent) throws IOException {
 
     }
-
     @FXML
-    private void goToRegistration(ActionEvent event) throws IOException{
+    public void goToMenu(ActionEvent actionEvent) throws IOException {
 
     }
 }
