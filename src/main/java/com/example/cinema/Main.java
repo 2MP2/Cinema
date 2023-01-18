@@ -13,8 +13,8 @@ import java.sql.SQLException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        //DatabaseConnection databaseConnection = new DatabaseConnection("jdbc:oracle:thin:@192.168.1.58:1521:xe","c##cinema_user","cinema_user");
-        //Model model = new Model(databaseConnection);
+        DatabaseConnection databaseConnection = new DatabaseConnection("jdbc:oracle:thin:@192.168.0.178:1521:xe","c##cinema_user","cinema_user");
+        Model model = new Model(databaseConnection);
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("StartView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -24,8 +24,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        TestReczny testReczny = new TestReczny();
-        testReczny.test();
+        //TestReczny testReczny = new TestReczny();
+        //testReczny.test();
         launch();
     }
 }
