@@ -5,19 +5,14 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
 public class Model {
-    private final ObjectProperty<DatabaseConnection> database = new SimpleObjectProperty<>(null);
+    private DatabaseConnection database;
 
     public Model(DatabaseConnection databaseConnection) {
-        database.set(databaseConnection);
+        database = databaseConnection;
     }
 
     public DatabaseConnection getDatabase() {
-        return database.get();
-    }
-
-    public ObjectProperty<DatabaseConnection> databaseProperty() {
         return database;
     }
-
 
 }

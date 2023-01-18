@@ -12,9 +12,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LoginController implements InitModel{
-    Model model;
-    DatabaseConnection databaseConnection;
+public class LoginController{
+
+    private static Model model;
     private FXMLLoader fxmlLoader;
     private Stage stage;
     private Scene scene;
@@ -22,16 +22,6 @@ public class LoginController implements InitModel{
     @FXML
     TextField loginTextField,passwordTextField;
 
-    @Override
-    public void initModel(Model model) {
-        if (this.model != null) {
-            throw new IllegalStateException("Model can only be initialized once");
-        }
-
-        this.model = model;
-        databaseConnection = model.getDatabase();
-
-    }
 
     @FXML
     public void login(ActionEvent actionEvent) throws IOException {
@@ -43,9 +33,13 @@ public class LoginController implements InitModel{
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        StartController startController = fxmlLoader.getController();
-        startController.fillList();
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void setModel(Model model) {
+        if(model != null)
+            throw new IllegalStateException("Model can only be initialized once");
+        LoginController.model = model;
     }
 }

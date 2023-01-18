@@ -18,21 +18,12 @@ public class Main extends Application {
         Model model = new Model(databaseConnection);
         Parent root;
 
-
-        FXMLLoader registrationViewLoader = new FXMLLoader(Main.class.getResource("RegistrationView.fxml"));
-        root = registrationViewLoader.load();
-        RegistrationController registrationController = registrationViewLoader.getController();
-        registrationController.initModel(model);
-
-        FXMLLoader loginViewLoader = new FXMLLoader(Main.class.getResource("LoginView.fxml"));
-        root = loginViewLoader.load();
-        LoginController loginController = loginViewLoader.getController();
-        loginController.initModel(model);
+        StartController.setModel(model);
+        //RegistrationController.setModel(model);
+        //LoginController.setModel(model);
 
         FXMLLoader starViewLoader = new FXMLLoader(Main.class.getResource("StartView.fxml"));
         root = starViewLoader.load();
-        StartController startController = starViewLoader.getController();
-        startController.initModel(model);
 
         Scene scene = new Scene(root);
         stage.setTitle("Kino");
@@ -41,8 +32,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        TestReczny testReczny = new TestReczny();
-        testReczny.test();
+        //TestReczny testReczny = new TestReczny();
+        //testReczny.test();
         launch();
     }
 }

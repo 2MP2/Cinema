@@ -4,45 +4,34 @@ import Controller.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import Model.Seances;
 import Model.Movies;
 import javafx.stage.Stage;
 
 
-public class StartController implements InitModel{
-    Model model;
-    DatabaseConnection databaseConnection;
-
+public class StartController implements Initializable{
+    private static  Model model = null;
     private Stage stage;
     private Scene scene;
     private Parent root;
     @FXML
     ListView <String> seancesListView;
 
-    @Override
-    public void initModel(Model model) {
-        if (this.model != null) {
-            throw new IllegalStateException("Model can only be initialized once");
-        }
-
-        this.model = model;
-        databaseConnection = model.getDatabase();
-
-        fillList();
-    }
-
      void fillList(){
-        List<Seances> listS = databaseConnection.getSeancesList();
-        List<Movies> listM = databaseConnection.getMoviesList();
+        List<Seances> listS = model.getDatabase().getSeancesList();
+        List<Movies> listM = model.getDatabase().getMoviesList();
 
         for (Seances s: listS)
         {
@@ -88,5 +77,17 @@ public class StartController implements InitModel{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        fillList();
+    }
+
+    public static void setModel(Model model) {
+        if(StartController.model != null)
+            System.out.println("CCCC");
+
+        StartController.model = model;
     }
 }
