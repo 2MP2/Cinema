@@ -11,6 +11,14 @@ public class DatabaseConnection {
     private final Connection con;
     public DatabaseConnection(String url, String login, String password) throws SQLException {
         this.con = DriverManager.getConnection(url,login,password);
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }));
     }
     public boolean changeCustomer(long in_id_customer, String in_password, String in_name, String in_surname, String in_phone_number)
     {
@@ -511,4 +519,6 @@ public class DatabaseConnection {
         }
         return list;
     }
+
+
 }

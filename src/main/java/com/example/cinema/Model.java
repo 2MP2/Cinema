@@ -15,7 +15,6 @@ public class Model {
         return database.get();
     }
 
-
     public ObjectProperty<DatabaseConnection> databaseProperty() {
         return database;
     }
