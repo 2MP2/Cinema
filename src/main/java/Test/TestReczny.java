@@ -1,6 +1,6 @@
 package Test;
 
-import Controller.DatabaseConnection;
+import Database.DatabaseConnection;
 import Model.*;
 
 import java.sql.SQLException;
@@ -15,21 +15,21 @@ public class TestReczny {
 
 
             System.out.println("-------------------1------------------------------");
-            dbc.insertMovie("Superman", 140, "xx distributor", new Timestamp(2022, 2, 1, 12, 0, 0, 0), new Timestamp(2022, 2, 1, 12, 0, 0, 0), 'D', false);
-            dbc.insertMovie("Spiderman", 120, "xx distributor", new Timestamp(2022, 2, 1, 12, 0, 0, 0), new Timestamp(2022, 2, 1, 12, 0, 0, 0), 'D', false);
+            dbc.insertMovie("Superman", 140, "xx distributor", new Timestamp(2022 - 1900, 2 - 1, 1, 12, 0, 0, 0), new Timestamp(2022, 2, 1, 12, 0, 0, 0), 'D', false);
+            dbc.insertMovie("Spiderman", 120, "xx distributor", new Timestamp(2022 - 1900, 2 - 1, 1, 12, 0, 0, 0), new Timestamp(2022, 2, 1, 12, 0, 0, 0), 'D', false);
             System.out.println("-------------------2------------------------------");
             dbc.insertScreeningRoom(8, 10);
             dbc.insertScreeningRoom(7, 10);
             dbc.insertScreeningRoom(9, 10);
 
             System.out.println("-------------------3------------------------------");
-            Timestamp timestamp1 = new Timestamp(2022, 2, 1, 12, 0, 0, 0);
-            Timestamp timestamp2 = new Timestamp(2022, 2, 1, 14, 50, 0, 0);
-            Timestamp timestamp3 = new Timestamp(2022, 2, 1, 15, 0, 0, 0);
-            Timestamp timestamp4 = new Timestamp(2022, 2, 1, 19, 0, 0, 0);
+            Timestamp timestamp1 = new Timestamp(2022 - 1900, 2-1, 1, 12, 5, 0, 0);
+            Timestamp timestamp2 = new Timestamp(2022 - 1900, 2-1, 1, 14, 50, 0, 0);
+            Timestamp timestamp3 = new Timestamp(2022 - 1900, 2-1, 1, 15, 15, 0, 0);
+            Timestamp timestamp4 = new Timestamp(2022 - 1900, 2-1, 1, 19, 0, 0, 0);
 
-            dbc.insertSeance(timestamp1, timestamp2, 15d, 1, 2);
-            dbc.insertSeance(timestamp3, timestamp4, 20d, 2, 1);
+            dbc.insertSeance(timestamp1, timestamp2, 15.303333d, 1, 2);
+            dbc.insertSeance(timestamp3, timestamp4, 20.3773d, 2, 1);
             System.out.println("-------------------4------------------------------");
             dbc.insertPosition("sprzedawca", 3000d);
             dbc.insertPosition("kierownik", 7000d);

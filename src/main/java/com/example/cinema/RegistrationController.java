@@ -1,6 +1,5 @@
 package com.example.cinema;
 
-import Controller.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLIntegrityConstraintViolationException;
 
 public class RegistrationController{
 

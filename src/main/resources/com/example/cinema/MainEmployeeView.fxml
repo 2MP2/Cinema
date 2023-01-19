@@ -14,7 +14,7 @@
       <Button layoutX="508.0" layoutY="11.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
       <Button layoutY="48.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Seanse (sprzedaj bilet)" />
       <Button layoutY="118.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Dodaj filmn" />
-      <Button layoutY="329.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Edycja pracownika" />
+      <Button layoutY="329.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Dodaj/Zwolnij pracownika" />
       <Button layoutY="188.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Dodaj seans" />
       <Button layoutY="258.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Dodaj sale" />
    </children>

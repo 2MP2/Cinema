@@ -1,6 +1,5 @@
 package com.example.cinema;
 
-import Controller.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +11,6 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -37,7 +35,7 @@ public class StartController implements Initializable{
         {
             String title = "";
             int length = 0;
-            char dub_sub_lec = 'A';
+            char dub_sub_lec = 'X';
             boolean is3D = false;
 
             for(Movies m:listM)
@@ -57,7 +55,17 @@ public class StartController implements Initializable{
                     title + " " + length + " " + dub_sub_lec + " " + is3D + " " +
                     s.getId_screening_room();
 
-            seancesListView.getItems().add(fullString);
+            String full = title + " "+ length + "min "
+                    + Math.round(s.getTicket_price() * 100.00)/100.00 + "zł "
+                    + s.getStart_time().getHours() + ":" + ((s.getStart_time().getMinutes()<10) ? "0" : "") + s.getStart_time().getMinutes() + "-"
+                    + s.getEnd_time().getHours() + ":" + s.getEnd_time().getMinutes()
+                    + ((Character.toUpperCase(dub_sub_lec) == 'D') ? " DUBBING"
+                    : ((Character.toUpperCase(dub_sub_lec) == 'S') ? " NAPISY"
+                    : ((Character.toUpperCase(dub_sub_lec) == 'L') ? " LECTOR" : " XXX")))
+                    + ((is3D) ? " 3D" : " 2D");
+
+
+            seancesListView.getItems().add(full);
         }
     }
 

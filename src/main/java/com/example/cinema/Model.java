@@ -1,6 +1,6 @@
 package com.example.cinema;
 
-import Controller.DatabaseConnection;
+import Database.DatabaseConnection;
 
 public class Model {
 
