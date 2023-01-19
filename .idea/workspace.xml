@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="działa">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EditEmployView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainEmployeeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainEmployeeView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -75,7 +78,7 @@
       <workItem from="1674041591565" duration="466000" />
       <workItem from="1674053610297" duration="28965000" />
       <workItem from="1674086020776" duration="70000" />
-      <workItem from="1674139543164" duration="2544000" />
+      <workItem from="1674139543164" duration="3345000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -161,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674085511577</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="działa">
+      <created>1674142106506</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1674142106506</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +182,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="zmiana_model_na_static" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
