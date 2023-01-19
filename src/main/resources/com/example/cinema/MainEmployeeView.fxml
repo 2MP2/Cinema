@@ -3,10 +3,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.MainEmployeeController">
    <children>
-      <Label layoutX="216.0" layoutY="200.0" text="Zalogowałeś sie jako Pracownik" />
-      <Button layoutX="184.0" layoutY="275.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+      <Label layoutX="15.0" layoutY="14.0" text="Zalogowałeś sie jako Pracownik">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="508.0" layoutY="11.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+      <Button layoutY="48.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Seanse (sprzedaj bilet)" />
+      <Button layoutY="118.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Dodaj filmn" />
+      <Button layoutY="329.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Edycja pracownika" />
+      <Button layoutY="188.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Dodaj seans" />
+      <Button layoutY="258.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="600.0" text="Dodaj sale" />
    </children>
 </AnchorPane>
