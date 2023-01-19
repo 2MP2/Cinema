@@ -26,10 +26,10 @@ public class EmployeeSeancesView {
     }
 
     @FXML
-    private void logout(ActionEvent actionEvent) throws IOException {
-        model.clear();
+    private void goToMenu(ActionEvent actionEvent) throws IOException {
 
-        fxmlLoader = new FXMLLoader(getClass().getResource("StartView.fxml"));
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("MainEmployeeView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);

@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EmployeeAddSeancesController {
+public class EmployeeAddEmployeeController {
 
     private static Model model;
     private FXMLLoader fxmlLoader;
@@ -19,10 +19,10 @@ public class EmployeeAddSeancesController {
     private Parent root;
 
     public static void setModel(Model model) {
-        if(EmployeeAddSeancesController.model != null)
+        if(EmployeeAddEmployeeController.model != null)
             throw new IllegalStateException("Model can only be initialized once");
 
-        EmployeeAddSeancesController.model = model;
+        EmployeeAddEmployeeController.model = model;
     }
 
     @FXML

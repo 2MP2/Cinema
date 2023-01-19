@@ -43,19 +43,21 @@ public class LoginController implements Initializable {
 
             try {
                 id = model.getDatabase().logInCustomer(loginTextField.getText(),passwordTextField.getText());
+                model.setId(id);
+                model.setLogin(loginTextField.getText());
             }catch (Exception e){
                 id = 0;
                 errorLabel.setVisible(true);
-                errorLabel.setText("Błąd " + passwordTextField.getText());
+                errorLabel.setText("Błąd ");
                 System.out.println(e.getMessage());
             }
 
             if(id>0){ //warunek zawierajace metode z databes logowania
-                root = FXMLLoader.load(getClass().getResource("MainCustomerView.fxml"));
-                stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
                 model.setId(id);
                 model.setLogin(loginTextField.getText());
+
+                root = FXMLLoader.load(getClass().getResource("MainCustomerView.fxml"));
+                stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
                 scene = new Scene(root);
                 stage.setScene(scene);
@@ -67,6 +69,8 @@ public class LoginController implements Initializable {
 
             try {
                 id = model.getDatabase().logInEmployee(loginTextField.getText(),passwordTextField.getText());
+                model.setId(id);
+                model.setLogin(loginTextField.getText());
             }catch (Exception e){
                 id = 0;
                 errorLabel.setVisible(true);

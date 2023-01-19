@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.cinema.EmployeeAddFilmView"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.EmployeeAddFilmController">
+   <children>
+      <Button layoutX="16.0" layoutY="279.0" mnemonicParsing="false" onAction="#goToMenu" text="Powrót" />
+      <Label layoutX="162.0" layoutY="35.0" text="Tytuł:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="67.0" text="Długość filmu (min):">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="98.0" text="Dystrybutor:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="131.0" text="Data pożyczenia filmiu:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="164.0" text="Data oddania filmiu:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="199.0" text="Dubbing/napisy/lektor:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="149.0" layoutY="234.0" text="2D/3D:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="getDataPicker" layoutX="212.0" layoutY="132.0" promptText="Dodaj date" />
+      <DatePicker fx:id="returnDataPicker" layoutX="212.0" layoutY="165.0" promptText="DodajDate" />
+      <TextField fx:id="titleTextArea" layoutX="211.0" layoutY="36.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="lengthTextArea" layoutX="211.0" layoutY="68.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="distributorTextArea" layoutX="211.0" layoutY="99.0" prefHeight="26.0" prefWidth="175.0" />
+      <ChoiceBox fx:id="dslChoiceBox" layoutX="211.0" layoutY="200.0" prefHeight="26.0" prefWidth="175.0" />
+      <ChoiceBox fx:id="is3DChoiceBox" layoutX="211.0" layoutY="235.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="212.0" layoutY="272.0" mnemonicParsing="false" onAction="#addFilm" prefHeight="26.0" prefWidth="175.0" text="Dodaj Film" />
+      <Label fx:id="errorLabel" layoutX="206.0" layoutY="7.0" text="ERROR" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

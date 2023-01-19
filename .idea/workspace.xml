@@ -5,20 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="xxxx">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddFilmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddSeancesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeEditEmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeAddFilmView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeAddSeancesView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeEditEmployeeView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeSeancesView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddEmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeFireEmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeFireEmployeeView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddFilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddSeancesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddSeancesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeEditEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeEditEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EditEmployView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeEditEmployView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeAddFilmView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeAddFilmView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeAddSeancesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeAddSeancesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeEditEmployeeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeAddEmployeeView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeSeancesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeSeancesView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainEmployeeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainEmployeeView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +98,7 @@
       <workItem from="1674041591565" duration="466000" />
       <workItem from="1674053610297" duration="28965000" />
       <workItem from="1674086020776" duration="70000" />
-      <workItem from="1674139543164" duration="13157000" />
+      <workItem from="1674139543164" duration="20146000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -202,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674150311596</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="xxxx">
+      <created>1674152797222</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1674152797222</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

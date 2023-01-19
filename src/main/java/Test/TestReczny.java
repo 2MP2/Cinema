@@ -34,7 +34,8 @@ public class TestReczny {
             dbc.insertPosition("sprzedawca", 3000d);
             dbc.insertPosition("kierownik", 7000d);
             System.out.println("-------------------5------------------------------");
-            dbc.insertEmployee("empl1", "sed3", "Julia", "Nowako", "657345903", timestamp1, 2);
+            dbc.insertEmployee("empl1", "sed3", "Julixa", "Noxwako", "65734903", timestamp1, 2);
+            dbc.insertEmployee("1", "1", "Julia", "Nowako", "65734503", timestamp1, 2);
             dbc.insertEmployee("empl2", "pwe4", "Pawel", "Towak", "923401903", timestamp1, 1);
             dbc.insertEmployee("empl3", "p554", "Julian", "Nowak", "567401903", timestamp1, 1);
             System.out.println("-------------------6------------------------------");
