@@ -86,6 +86,8 @@ public class TestReczny {
             //System.out.println("-------------------25------------------------------");
             //List<TakenSeats> list9 = dbc.getTakenSeatsList(1);
 
+            System.out.println(dbc.isEmployeeAnManager(2));
+
             System.out.println(dbc.logInEmployee("empl1","sed3"));
             System.out.println(dbc.logInCustomer("sdsd4","s3erf"));
 

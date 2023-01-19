@@ -495,6 +495,24 @@ public class DatabaseConnection {
 
     }
 
+    public boolean isEmployeeAnManager(long in_id_employee) throws SQLException
+    {
+        boolean id;
+        String sql_string = "begin ? := c##cinema.isEmployeeAnManager(?); end;";
+
+        CallableStatement cs = con.prepareCall(sql_string);
+        cs.registerOutParameter(1,Types.NUMERIC);
+        cs.setLong(2, in_id_employee);
+        cs.execute();
+
+        id = cs.getBoolean(1);
+        cs.close();
+
+        return id;
+
+    }
+
+
     public List<TakenSeats> getTakenSeatsList(long in_id_seat){ // nie dziala
         List <TakenSeats> list= new ArrayList<>();
 
