@@ -43,15 +43,15 @@ public class MainEmployeeController implements Initializable {
         try {
             if(model.getDatabase().isEmployeeAnManager(model.getId()))
             {
-                idLabel.setText("Kierownik: " + model.getId());
+                idLabel.setText("Kierownik ID: " + model.getId());
                 editEmployeeButton.setVisible(true);
             }
             else
-                idLabel.setText("Pracownik: " + model.getId());
+                idLabel.setText("Pracownik ID: " + model.getId());
         } catch (SQLException e) {
             System.out.println("Błąd");
             editEmployeeButton.setVisible(false);
-            idLabel.setText("Pracownik: " + model.getId());
+            idLabel.setText("Pracownik ID: " + model.getId());
         }
     }
 

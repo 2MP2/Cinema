@@ -79,6 +79,8 @@ public class EmployeeAddFilmController implements Initializable {
         Timestamp timestamp2;
 
         try {
+            timestamp1 = new Timestamp(getDataPicker.getValue().getYear(),getDataPicker.getValue().getMonthValue(),getDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
+            timestamp2 = new Timestamp(returnDataPicker.getValue().getYear(),returnDataPicker.getValue().getMonthValue(),returnDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
 
         }catch (Exception e)
         {
@@ -87,7 +89,52 @@ public class EmployeeAddFilmController implements Initializable {
             return;
         }
 
-        model.getDatabase().insertMovie(titleTextArea.getText(),min,distributorTextArea,);
+        char dsl = 'X';
+        try {
+            if(dslChoiceBox.getSelectionModel().getSelectedItem().equals("Dubbing")){
+                dsl = 'D';
+            }else if (dslChoiceBox.getSelectionModel().getSelectedItem().equals("Napisy")){
+                dsl = 'S';
+            }else if (dslChoiceBox.getSelectionModel().getSelectedItem().equals("Lektor")){
+                dsl = 'L';
+            }
+        }catch (Exception e){
+            errorLabel.setText("Nie wybrano dub/nap/lek");
+            errorLabel.setVisible(true);
+            return;
+        }
+
+        boolean is3D = false;
+        try {
+            if(is3DChoiceBox.getSelectionModel().getSelectedItem().equals("2D")){
+                is3D = false;
+            }else if (is3DChoiceBox.getSelectionModel().getSelectedItem().equals("3D")){
+                is3D = true;
+            }
+        }catch (Exception e){
+            errorLabel.setText("Nie wybrano 2D/3D");
+            errorLabel.setVisible(true);
+            return;
+        }
+
+        try {
+            model.getDatabase().insertMovie(titleTextArea.getText(),min,distributorTextArea.getText(),timestamp1,timestamp2,dsl,is3D);
+            errorLabel.setText("DODANO FILM");
+            errorLabel.setVisible(true);
+        }catch (Exception  e)
+        {
+            if(e.getMessage().equals("ORA-01438"))
+            {
+                errorLabel.setText("Za długi film");
+                errorLabel.setVisible(true);
+            }else {
+                errorLabel.setText("ERROR");
+                errorLabel.setVisible(true);
+                System.out.println(e.getMessage());
+            }
+
+        }
+
 
     }
 }
