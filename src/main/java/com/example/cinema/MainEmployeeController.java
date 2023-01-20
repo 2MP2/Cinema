@@ -25,9 +25,9 @@ public class MainEmployeeController implements Initializable {
     private Parent root;
 
     @FXML
-    Label idLabel;
+    private Label idLabel;
     @FXML
-    Button editEmployeeButton;
+    private Button editEmployeeButton;
 
     public static void setModel(Model model) {
         if(MainEmployeeController.model != null)

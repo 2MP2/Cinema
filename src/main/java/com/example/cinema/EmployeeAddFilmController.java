@@ -34,13 +34,13 @@ public class EmployeeAddFilmController implements Initializable {
     }
 
     @FXML
-    TextField titleTextArea,lengthTextArea,distributorTextArea;
+    private TextField titleTextArea,lengthTextArea,distributorTextArea;
     @FXML
-    DatePicker getDataPicker,returnDataPicker;
+    private DatePicker getDataPicker,returnDataPicker;
     @FXML
-    ChoiceBox<String> dslChoiceBox,is3DChoiceBox;
+    private ChoiceBox<String> dslChoiceBox,is3DChoiceBox;
     @FXML
-    Label errorLabel;
+    private Label errorLabel;
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
 
@@ -64,7 +64,7 @@ public class EmployeeAddFilmController implements Initializable {
     }
 
     @FXML
-    public void addFilm(ActionEvent actionEvent) throws IOException{
+    private void addFilm(ActionEvent actionEvent) throws IOException{
         int min;
         try {
             min = Integer.parseInt(lengthTextArea.getText());
@@ -79,8 +79,8 @@ public class EmployeeAddFilmController implements Initializable {
         Timestamp timestamp2;
 
         try {
-            timestamp1 = new Timestamp(getDataPicker.getValue().getYear(),getDataPicker.getValue().getMonthValue(),getDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
-            timestamp2 = new Timestamp(returnDataPicker.getValue().getYear(),returnDataPicker.getValue().getMonthValue(),returnDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
+            timestamp1 = new Timestamp(getDataPicker.getValue().getYear()-1900,getDataPicker.getValue().getMonthValue()-1,getDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
+            timestamp2 = new Timestamp(returnDataPicker.getValue().getYear()-1900,returnDataPicker.getValue().getMonthValue()-1,returnDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
 
         }catch (Exception e)
         {

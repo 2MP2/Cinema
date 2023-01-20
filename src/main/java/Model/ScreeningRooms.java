@@ -43,11 +43,9 @@ public class ScreeningRooms {
 
     @Override
     public String toString() {
-        return "ScreeningRooms{" +
-                "id_screening_room=" + id_screening_room +
+        return "id_screening_room=" + id_screening_room +
                 ", amount_of_seats=" + amount_of_seats +
                 ", amount_of_rows=" + amount_of_rows +
-                ", amount_of_columns=" + amount_of_columns +
-                '}';
+                ", amount_of_columns=" + amount_of_columns;
     }
 }

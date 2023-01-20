@@ -85,15 +85,13 @@ public class Movies {
 
     @Override
     public String toString() {
-        return "Movies{" +
-                "id_movie=" + id_movie +
-                ", title='" + title + '\'' +
+        return "id_movie=" + id_movie +
+                ", title=" + title +
                 ", length=" + length +
-                ", distributor='" + distributor + '\'' +
+                ", distributor=" + distributor +
                 ", borrow_date=" + borrow_date +
                 ", return_date=" + return_date +
                 ", dub_sub_lec=" + dub_sub_lec +
-                ", is3D=" + is3D +
-                '}';
+                ", is3D=" + is3D;
     }
 }
