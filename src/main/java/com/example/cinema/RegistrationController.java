@@ -31,7 +31,7 @@ public class RegistrationController{
         boolean isReg = false;
 
         try {
-            model.getDatabase().insertCustomer(loginTextField.getText(),passwordTextField.getText(),nameTextField.getText(),surnameTextField.getText(),passwordTextField.getText());
+            model.getDatabase().insertCustomer(loginTextField.getText(),passwordTextField.getText(),nameTextField.getText(),surnameTextField.getText(),phoneTextField.getText());
             isReg =true;
         }
         catch (NullPointerException e){
@@ -49,7 +49,6 @@ public class RegistrationController{
                 errorLabel.setVisible(true);
                 errorLabel.setText("ERROR");
             }
-
 
         }
 

@@ -33,10 +33,8 @@ public class Positions {
 
     @Override
     public String toString() {
-        return "Positions{" +
-                "id_position=" + id_position +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
-                '}';
+        return "id_position=" + id_position +
+                ", name=" + name +
+                ", salary=" + salary;
     }
 }
