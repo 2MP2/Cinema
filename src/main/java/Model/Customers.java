@@ -70,14 +70,10 @@ public class Customers {
 
     @Override
     public String toString() {
-        return "Customers{" +
-                "id_customer=" + id_customer +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", phone_number='" + phone_number + '\'' +
-                ", is_active=" + is_active +
-                '}';
+        return "id_customer=" + id_customer +
+                ", name=" + name +
+                ", surname=" + surname +
+                ", phone_number=" + phone_number +
+                ", is_active=" + is_active;
     }
 }

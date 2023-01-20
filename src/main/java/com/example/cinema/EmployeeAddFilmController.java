@@ -43,8 +43,6 @@ public class EmployeeAddFilmController implements Initializable {
     private Label errorLabel;
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
-
-
         fxmlLoader = new FXMLLoader(getClass().getResource("MainEmployeeView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

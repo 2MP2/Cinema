@@ -103,6 +103,8 @@ public class TestReczny {
             System.out.println(list8.toString());
             //System.out.println(list9.toString());
 
+
+
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

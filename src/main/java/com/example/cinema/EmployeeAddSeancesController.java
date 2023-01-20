@@ -65,8 +65,6 @@ public class EmployeeAddSeancesController implements Initializable {
         Timestamp timestamp2;
 
         try {
-
-
             timestamp1 = new Timestamp(startDatePicker.getValue().getYear()-1900,startDatePicker.getValue().getMonthValue()-1,startDatePicker.getValue().getDayOfMonth(),
                                             startHourSpinner.getValue(),startMinuteSpinner.getValue(),0,0 );
             timestamp2 = new Timestamp(endDatePicker.getValue().getYear()-1900,endDatePicker.getValue().getMonthValue()-1,endDatePicker.getValue().getDayOfMonth(),
@@ -101,7 +99,6 @@ public class EmployeeAddSeancesController implements Initializable {
             return;
         }
 
-
         Calendar cal =Calendar.getInstance();
         cal.setTime(timestamp1);
         cal.add(Calendar.MINUTE, movie.getLength());
@@ -114,7 +111,6 @@ public class EmployeeAddSeancesController implements Initializable {
                 errorLabel.setVisible(true);
                 return;
         }
-
 
         try {
             model.getDatabase().insertSeance(timestamp1,timestamp2,price,movie.getId_movie(),screeningRoom.getId_screening_room());

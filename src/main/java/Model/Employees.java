@@ -90,16 +90,12 @@ public class Employees {
 
     @Override
     public String toString() {
-        return "Employees{" +
-                "id_employee=" + id_employee +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", phone_number='" + phone_number + '\'' +
+        return "id_employee=" + id_employee +
+                ", name=" + name +
+                ", surname=" + surname+
+                ", phone_number=" + phone_number +
                 ", hire_date=" + hire_date +
                 ", fire_date=" + fire_date +
-                ", id_position=" + id_position +
-                '}';
+                ", id_position=" + id_position;
     }
 }

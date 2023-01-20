@@ -28,7 +28,6 @@ public class EmployeeSeancesView {
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
 
-
         fxmlLoader = new FXMLLoader(getClass().getResource("MainEmployeeView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

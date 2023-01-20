@@ -137,22 +137,16 @@ public class DatabaseConnection {
 
         return true;
     }
-    public boolean fireEmployee(long in_id_employee, Timestamp in_fire_date)
+    public boolean fireEmployee(long in_id_employee, Timestamp in_fire_date) throws SQLException
     {
         String sql_string = "CALL c##cinema.fireEmployee(?,?)";
 
-        try {
             CallableStatement cs = con.prepareCall(sql_string);
             cs.setLong(1,in_id_employee);
             cs.setTimestamp(2,in_fire_date);
 
             cs.execute();
             cs.close();
-        }catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            return false;
-        }
 
         return true;
     }
@@ -303,11 +297,11 @@ public class DatabaseConnection {
         List <Customers> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.CUSTOMERS");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewCustomers"); //bez loginów i haseł
 
             while (rs.next())
             {
-                list.add(new Customers(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getBoolean(7)));
+                list.add(new Customers(rs.getLong(1),"","",rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5)));
             }
 
         }catch (Exception e)
@@ -323,11 +317,11 @@ public class DatabaseConnection {
         List <Employees> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.EMPLOYEES");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewEmployees");
 
             while (rs.next())
             {
-                list.add(new Employees(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getTimestamp(7),rs.getTimestamp(8),rs.getLong(9)));
+                list.add(new Employees(rs.getLong(1),"","",rs.getString(2),rs.getString(3),rs.getString(4),rs.getTimestamp(5),rs.getTimestamp(6),rs.getLong(7)));
             }
 
         }catch (Exception e)
@@ -343,7 +337,7 @@ public class DatabaseConnection {
         List <Movies> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.MOVIES");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewMovies");
 
             while (rs.next())
             {
@@ -363,7 +357,7 @@ public class DatabaseConnection {
         List <Positions> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.POSITIONS");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewPositions");
 
             while (rs.next())
             {
@@ -383,7 +377,7 @@ public class DatabaseConnection {
         List <ScreeningRooms> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.SCREENINGROOMS");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewScreeningrooms");
 
             while (rs.next())
             {
@@ -403,7 +397,7 @@ public class DatabaseConnection {
         List <Seances> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.SEANCES");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewSeances");
 
             while (rs.next())
             {
@@ -423,7 +417,7 @@ public class DatabaseConnection {
         List <TakenSeats> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.TEAKENSEATS");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewTeakenseats");
 
             while (rs.next())
             {
@@ -443,7 +437,7 @@ public class DatabaseConnection {
         List <Transactions> list= new ArrayList<>();
         try {
             Statement statement = con.createStatement();
-            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.TRANSACTIONS");
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewTransactions");
 
             while (rs.next())
             {
@@ -512,26 +506,4 @@ public class DatabaseConnection {
 
     }
 
-
-    public List<TakenSeats> getTakenSeatsList(long in_id_seat){ // nie dziala
-        List <TakenSeats> list= new ArrayList<>();
-
-        try {
-            PreparedStatement statement = con.prepareStatement("SELECT * FROM c##cinema.TRANSACTIONS WHERE id_seat = ?");
-            statement.setLong(1,in_id_seat);
-            ResultSet rs = statement.executeQuery();
-
-            while (rs.next())
-            {
-                list.add(new TakenSeats(rs.getLong(1),rs.getTimestamp(2),rs.getString(3).charAt(0),rs.getInt(4),rs.getString(5).charAt(0),rs.getLong(6),rs.getLong(7),rs.getLong(8)));
-            }
-
-        }catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            return null;
-        }
-
-        return list;
-    }
 }

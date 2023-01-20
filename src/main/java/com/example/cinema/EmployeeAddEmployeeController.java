@@ -32,10 +32,10 @@ public class EmployeeAddEmployeeController implements Initializable {
     private Label errorLabel;
 
     @FXML
-    TextField loginTextField, passwordTextField, nameTextField, surnameTextField, phoneTextField;
+    private TextField loginTextField, passwordTextField, nameTextField, surnameTextField, phoneTextField;
 
     @FXML
-    ChoiceBox<Positions> positionChoiceBox;
+    private ChoiceBox<Positions> positionChoiceBox;
 
     public static void setModel(Model model) {
         if (EmployeeAddEmployeeController.model != null)
@@ -46,9 +46,7 @@ public class EmployeeAddEmployeeController implements Initializable {
 
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
-
-
-        fxmlLoader = new FXMLLoader(getClass().getResource("MainEmployeeView.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeEditEmployView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -58,7 +56,6 @@ public class EmployeeAddEmployeeController implements Initializable {
 
     @FXML
     private void addEmployee(ActionEvent actionEvent) throws IOException {
-
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         try {
