@@ -59,6 +59,22 @@ public class EmployeeAddEmployeeController implements Initializable {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         try {
+
+            try {
+                Integer.parseInt(phoneTextField.getText());
+                if(phoneTextField.getText().length()!=9){
+                    throw new IllegalStateException("za krutki numer") ;
+                }
+            }catch (NumberFormatException  e){
+                errorLabel.setVisible(true);
+                errorLabel.setText("Numer zawiera niedozwoloneznaki");
+                return;
+            }catch (Exception e){
+                errorLabel.setVisible(true);
+                errorLabel.setText("Numer jest za krótki");
+                return;
+            }
+
             model.getDatabase().insertEmployee(loginTextField.getText(), passwordTextField.getText(), nameTextField.getText(), surnameTextField.getText(), phoneTextField.getText(), timestamp, positionChoiceBox.getSelectionModel().getSelectedItem().getId_position());
 
             errorLabel.setText("DODANO PRACOWNIKA ");

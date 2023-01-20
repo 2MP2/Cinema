@@ -31,6 +31,21 @@ public class RegistrationController{
         boolean isReg = false;
 
         try {
+            Integer.parseInt(phoneTextField.getText());
+            if(phoneTextField.getText().length()!=9){
+                throw new IllegalStateException("za krutki numer") ;
+            }
+        }catch (NumberFormatException  e){
+            errorLabel.setVisible(true);
+            errorLabel.setText("Numer zawiera niedozwoloneznaki");
+            return;
+        }catch (Exception e){
+            errorLabel.setVisible(true);
+            errorLabel.setText("Numer jest za krótki");
+            return;
+        }
+
+        try {
             model.getDatabase().insertCustomer(loginTextField.getText(),passwordTextField.getText(),nameTextField.getText(),surnameTextField.getText(),phoneTextField.getText());
             isReg =true;
         }

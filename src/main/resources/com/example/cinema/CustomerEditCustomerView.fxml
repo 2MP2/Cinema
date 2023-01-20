@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.CustomerEditCustomerController">
+   <children>
+      <Button layoutX="462.0" layoutY="413.0" mnemonicParsing="false" onAction="#goToMenu" text="Powrót" />
+      <Label layoutX="248.0" layoutY="14.0" text="Edytuj konto">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="59.0" text="Wpisz w pola dane, które chcesz zmienić:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="138.0" layoutY="94.0" text="Hasło: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="141.0" text="Imię: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="107.0" layoutY="184.0" text="Nazwisko: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="234.0" text="Numer telefonu: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="188.0" layoutY="135.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="surnameTextField" layoutX="188.0" layoutY="181.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="teleTextField" layoutX="188.0" layoutY="228.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="245.0" layoutY="330.0" text="Obecne dane:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="192.0" layoutY="357.0" text="Imię: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="384.0" text="Nazwisko: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="412.0" text="Numer telefonu: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentTele" layoutX="237.0" layoutY="412.0" text="xxx">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentSurname" layoutX="237.0" layoutY="384.0" text="xxx">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentName" layoutX="237.0" layoutY="357.0" text="xxx">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordField" layoutX="188.0" layoutY="88.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <Button layoutX="187.0" layoutY="281.0" mnemonicParsing="false" onAction="#changeCustomer" prefHeight="40.0" prefWidth="223.0" text="Zmień">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorLabel" layoutX="418.0" layoutY="291.0" text="ERROR" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="problem z pmyslem na listView">
+    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="Wciaz problem ale dodano juz diable na guziki">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/MovieAndSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/TSandMandS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerBuyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerEditCustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerMyTicketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerPreBuyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerBuyView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerEditCustomerView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerMyTicketView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerPreBuyView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/StartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainCustomerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainCustomerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/RegistrationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/RegistrationView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +99,8 @@
       <workItem from="1674041591565" duration="466000" />
       <workItem from="1674053610297" duration="28965000" />
       <workItem from="1674086020776" duration="70000" />
-      <workItem from="1674139543164" duration="44117000" />
+      <workItem from="1674139543164" duration="44262000" />
+      <workItem from="1674238705494" duration="15374000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -240,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674184396558</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Wciaz problem ale dodano juz diable na guziki">
+      <created>1674185682596</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674185682596</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +325,8 @@
     <MESSAGE value="addSeance addEmployee" />
     <MESSAGE value="dziala employ poza sprzedarza i dodano vidoki i usunieto hasla i loginy z widokow" />
     <MESSAGE value="problem z pmyslem na listView" />
-    <option name="LAST_COMMIT_MESSAGE" value="problem z pmyslem na listView" />
+    <MESSAGE value="Wciaz problem ale dodano juz diable na guziki" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wciaz problem ale dodano juz diable na guziki" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

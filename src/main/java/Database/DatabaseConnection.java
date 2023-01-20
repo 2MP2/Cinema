@@ -21,27 +21,23 @@ public class DatabaseConnection {
             }
         }));
     }
-    public boolean changeCustomer(long in_id_customer, String in_password, String in_name, String in_surname, String in_phone_number)
+    public void changeCustomer(long in_id_customer, String in_password, String in_name, String in_surname, String in_phone_number) throws SQLException
     {
         String sql_string = "CALL c##cinema.changeCustomer(?,?,?,?,?)";
 
-        try {
+
             CallableStatement cs = con.prepareCall(sql_string);
             cs.setLong(1,in_id_customer);
-            cs.setString(2,in_password);
+            if(in_password.equals(""))
+                cs.setNull(2, Types.VARCHAR);
+            else
+                cs.setString(2,in_password);
             cs.setString(3,in_name);
             cs.setString(4,in_surname);
             cs.setString(5,in_phone_number);
 
             cs.execute();
             cs.close();
-        }catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            return false;
-        }
-
-        return true;
     }
     public boolean changePositionName(long in_id_position, String in_name)
     {

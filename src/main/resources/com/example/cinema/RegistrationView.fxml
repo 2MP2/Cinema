@@ -64,7 +64,7 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <Label layoutX="339.0" layoutY="59.0" text="Błąd przy rejestracji" textFill="#f20303" visible="false">
+      <Label fx:id="errorLabel" layoutX="395.0" layoutY="330.0" text="Błąd przy rejestracji" textFill="#f20303" visible="false">
          <font>
             <Font size="14.0" />
          </font>

@@ -1,5 +1,6 @@
 package com.example.cinema;
 
+import DTO.MovieAndSeance;
 import Model.Movies;
 import Model.Seances;
 
@@ -31,12 +32,13 @@ public class MainCustomerController implements Initializable {
     private Parent root;
 
     @FXML
-    private Button goToBuyTicket,goBookTicket,goToMyReservations,goToEditCustomer;
+    private Button goToBuyTicket,goBookTicket,goToEditCustomer;
     @FXML
     private Label idLabel;
 
     @FXML
-    ListView<String> seancesListView;
+    ListView<MovieAndSeance> seancesListView;
+
     public static void setModel(Model model) {
         if(MainCustomerController.model != null)
             throw new IllegalStateException("Model can only be initialized once");
@@ -59,18 +61,7 @@ public class MainCustomerController implements Initializable {
     @FXML
     private void goToBuyTicket(ActionEvent actionEvent) throws IOException {
 
-        fxmlLoader = new FXMLLoader(getClass().getResource(""));
-        root = fxmlLoader.load();
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void goBookTicket(ActionEvent actionEvent) throws IOException {
-
-        fxmlLoader = new FXMLLoader(getClass().getResource(""));
+        fxmlLoader = new FXMLLoader(getClass().getResource("CustomerPreBuyView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -81,7 +72,7 @@ public class MainCustomerController implements Initializable {
     @FXML
     private void goToMyReservations(ActionEvent actionEvent) throws IOException {
 
-        fxmlLoader = new FXMLLoader(getClass().getResource(""));
+        fxmlLoader = new FXMLLoader(getClass().getResource("CustomerMyTicketView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -92,7 +83,7 @@ public class MainCustomerController implements Initializable {
     @FXML
     private void goToEditCustomer(ActionEvent actionEvent) throws IOException {
 
-        fxmlLoader = new FXMLLoader(getClass().getResource(""));
+        fxmlLoader = new FXMLLoader(getClass().getResource("CustomerEditCustomerView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -106,11 +97,10 @@ public class MainCustomerController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idLabel.setText("KLIENT: " + model.getLogin());
 
-        seancesListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        seancesListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<MovieAndSeance>() {
             @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+            public void changed(ObservableValue<? extends MovieAndSeance> observableValue, MovieAndSeance movieAndSeance, MovieAndSeance t1) {
                 goToBuyTicket.setDisable(false);
-                goBookTicket.setDisable(false);
             }
         });
 
@@ -119,35 +109,16 @@ public class MainCustomerController implements Initializable {
 
         for (Seances s: listS)
         {
-            String title = "";
-            int length = 0;
-            char dub_sub_lec = 'X';
-            boolean is3D = false;
-
             for(Movies m:listM)
             {
                 if(s.getId_movie()==m.getId_movie())
                 {
-                    title = m.getTitle();
-                    length = m.getLength();
-                    dub_sub_lec = m.getDub_sub_lec();
-                    is3D = m.isIs3D();
+                    MovieAndSeance movieAndSeance = new MovieAndSeance(m,s);
+                    seancesListView.getItems().add(movieAndSeance);
+                    break;
                 }
             }
-
-            String full = title + " "+ length + "min "
-                    + Math.round(s.getTicket_price() * 100.00)/100.00 + "zł "
-                    + s.getStart_time().getHours() + ":" + ((s.getStart_time().getMinutes()<10) ? "0" : "") + s.getStart_time().getMinutes() + "-"
-                    + s.getEnd_time().getHours() + ":" + s.getEnd_time().getMinutes()
-                    + ((Character.toUpperCase(dub_sub_lec) == 'D') ? " DUBBING"
-                    : ((Character.toUpperCase(dub_sub_lec) == 'S') ? " NAPISY"
-                    : ((Character.toUpperCase(dub_sub_lec) == 'L') ? " LECTOR" : " XXX")))
-                    + ((is3D) ? " 3D" : " 2D");
-
-
-            seancesListView.getItems().add(full);
         }
-
     }
 
 

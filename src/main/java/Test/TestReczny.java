@@ -39,7 +39,7 @@ public class TestReczny {
             dbc.insertEmployee("empl2", "pwe4", "Pawel", "Towak", "923401903", timestamp1, 1);
             dbc.insertEmployee("empl3", "p554", "Julian", "Nowak", "567401903", timestamp1, 1);
             System.out.println("-------------------6------------------------------");
-            dbc.insertCustomer("sdsd4", "s3erf", "Jan", "Nowak", "758345903");
+            dbc.insertCustomer("1", "1", "Jan", "Nowak", "758345903");
             dbc.insertCustomer("8dsdf", "45rrrf", "Pawel", "Nowak", "958301903");
             dbc.insertCustomer("555df", "4678rf", "Tomasz", "Nowak", "954561903");
             System.out.println("-------------------7------------------------------");

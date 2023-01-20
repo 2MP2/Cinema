@@ -20,16 +20,23 @@ public class Main extends Application {
         Parent root;
 
         StartController.setModel(model);
+
         RegistrationController.setModel(model);
         LoginController.setModel(model);
         MainCustomerController.setModel(model);
         MainEmployeeController.setModel(model);
+
         EmployeeAddEmployeeController.setModel(model);
         EmployeeAddFilmController.setModel(model);
         EmployeeAddSeancesController.setModel(model);
         EmployeeEditEmployeeController.setModel(model);
         EmployeeFireEmployeeController.setModel(model);
         EmployeeSeancesView.setModel(model);
+
+        CustomerBuyController.setModel(model);
+        CustomerEditCustomerController.setModel(model);
+        CustomerMyTicketController.setModel(model);
+        CustomerPreBuyController.setModel(model);
 
         FXMLLoader starViewLoader = new FXMLLoader(Main.class.getResource("StartView.fxml"));
         root = starViewLoader.load();
