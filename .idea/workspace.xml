@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="dziala employ poza sprzedarza i dodano vidoki i usunieto hasla i loginy z widokow">
+    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="problem z pmyslem na listView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/StartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainCustomerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainCustomerView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +84,7 @@
       <workItem from="1674041591565" duration="466000" />
       <workItem from="1674053610297" duration="28965000" />
       <workItem from="1674086020776" duration="70000" />
-      <workItem from="1674139543164" duration="42942000" />
+      <workItem from="1674139543164" duration="44117000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -232,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674183258192</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="problem z pmyslem na listView">
+      <created>1674184396558</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674184396558</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +301,8 @@
     <MESSAGE value="addSeance dziala" />
     <MESSAGE value="addSeance addEmployee" />
     <MESSAGE value="dziala employ poza sprzedarza i dodano vidoki i usunieto hasla i loginy z widokow" />
-    <option name="LAST_COMMIT_MESSAGE" value="dziala employ poza sprzedarza i dodano vidoki i usunieto hasla i loginy z widokow" />
+    <MESSAGE value="problem z pmyslem na listView" />
+    <option name="LAST_COMMIT_MESSAGE" value="problem z pmyslem na listView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,6 +3,8 @@ package com.example.cinema;
 import Model.Movies;
 import Model.Seances;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -29,9 +32,11 @@ public class MainCustomerController implements Initializable {
 
     @FXML
     private Button goToBuyTicket,goBookTicket,goToMyReservations,goToEditCustomer;
+    @FXML
+    private Label idLabel;
 
     @FXML
-    ListView<Seances> seancesListView;
+    ListView<String> seancesListView;
     public static void setModel(Model model) {
         if(MainCustomerController.model != null)
             throw new IllegalStateException("Model can only be initialized once");
@@ -96,8 +101,19 @@ public class MainCustomerController implements Initializable {
     }
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        idLabel.setText("KLIENT: " + model.getLogin());
+
+        seancesListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                goToBuyTicket.setDisable(false);
+                goBookTicket.setDisable(false);
+            }
+        });
+
         List<Seances> listS = model.getDatabase().getSeancesList();
         List<Movies> listM = model.getDatabase().getMoviesList();
 
@@ -118,12 +134,6 @@ public class MainCustomerController implements Initializable {
                     is3D = m.isIs3D();
                 }
             }
-            String fullString = s.getId_seance() + " " +
-                    s.getStart_time() + " " +
-                    s.getEnd_time() + " " +
-                    s.getTicket_price() + " " +
-                    title + " " + length + " " + dub_sub_lec + " " + is3D + " " +
-                    s.getId_screening_room();
 
             String full = title + " "+ length + "min "
                     + Math.round(s.getTicket_price() * 100.00)/100.00 + "zł "
@@ -139,6 +149,7 @@ public class MainCustomerController implements Initializable {
         }
 
     }
+
 
 
 

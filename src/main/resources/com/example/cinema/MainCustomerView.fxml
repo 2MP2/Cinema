@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.MainCustomerController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Zalogowales sie jako KLIENT" />
+      <Label fx:id="idLabel" layoutX="14.0" layoutY="14.0" text="Zalogowales sie jako KLIENT" />
       <Button layoutX="451.0" layoutY="187.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="130.0" text="Wyloguj się" />
       <Button fx:id="goToBuyTicket" disable="true" layoutX="451.0" layoutY="44.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Kup bilet" />
       <Button fx:id="goBookTicket" disable="true" layoutX="451.0" layoutY="80.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Zarezerwój bilet" />

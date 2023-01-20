@@ -48,12 +48,6 @@ public class StartController implements Initializable{
                     is3D = m.isIs3D();
                 }
             }
-            String fullString = s.getId_seance() + " " +
-                    s.getStart_time() + " " +
-                    s.getEnd_time() + " " +
-                    s.getTicket_price() + " " +
-                    title + " " + length + " " + dub_sub_lec + " " + is3D + " " +
-                    s.getId_screening_room();
 
             String full = title + " "+ length + "min "
                     + Math.round(s.getTicket_price() * 100.00)/100.00 + "zł "
