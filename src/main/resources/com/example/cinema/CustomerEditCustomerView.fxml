@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.CustomerEditCustomerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.CustomerEditCustomerController">
    <children>
-      <Button layoutX="462.0" layoutY="413.0" mnemonicParsing="false" onAction="#goToMenu" text="Powrót" />
+      <Button layoutX="552.0" layoutY="541.0" mnemonicParsing="false" onAction="#goToMenu" text="Powrót" />
       <Label layoutX="248.0" layoutY="14.0" text="Edytuj konto">
          <font>
             <Font size="18.0" />
@@ -103,6 +104,22 @@
       <Label fx:id="errorLabel" layoutX="418.0" layoutY="291.0" text="ERROR" textFill="RED" visible="false">
          <font>
             <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="224.0" layoutY="452.0" text="Usuń swoje konto ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="con" layoutX="166.0" layoutY="485.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="40.0" prefWidth="223.0" text="Usuń konto">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="confirmCheckBox" layoutX="232.0" layoutY="541.0" mnemonicParsing="false" text="Potwierdzam" />
+      <Label fx:id="errorLabel2" layoutX="398.0" layoutY="491.0" text="xxx" textFill="RED">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
    </children>

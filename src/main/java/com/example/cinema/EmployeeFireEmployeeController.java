@@ -35,8 +35,6 @@ public class EmployeeFireEmployeeController implements Initializable {
     @FXML
     Label errorLabel;
 
-
-
     public static void setModel(Model model) {
         if(EmployeeFireEmployeeController.model != null)
             throw new IllegalStateException("Model can only be initialized once");
@@ -53,7 +51,6 @@ public class EmployeeFireEmployeeController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     private void fireEmployee(ActionEvent actionEvent) throws IOException{
         if(confirmCheckBox.isSelected()) {

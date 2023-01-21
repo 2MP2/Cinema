@@ -25,7 +25,6 @@ public class RegistrationController{
     @FXML
     private Label errorLabel;
 
-
     @FXML
     private void registration(ActionEvent actionEvent) throws IOException {
         boolean isReg = false;
@@ -64,7 +63,6 @@ public class RegistrationController{
                 errorLabel.setVisible(true);
                 errorLabel.setText("ERROR");
             }
-
         }
 
         if(isReg){

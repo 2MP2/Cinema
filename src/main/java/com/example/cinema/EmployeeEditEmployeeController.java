@@ -23,7 +23,6 @@ public class EmployeeEditEmployeeController {
 
         EmployeeEditEmployeeController.model = model;
     }
-
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
 
@@ -34,7 +33,6 @@ public class EmployeeEditEmployeeController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     private void goToAddEmployee(ActionEvent actionEvent) throws IOException {
 
@@ -45,7 +43,6 @@ public class EmployeeEditEmployeeController {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     private void goToFireEmployee(ActionEvent actionEvent) throws IOException {
 

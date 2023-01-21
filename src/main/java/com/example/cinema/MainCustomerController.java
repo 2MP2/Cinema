@@ -66,7 +66,6 @@ public class MainCustomerController implements Initializable {
         int col = 10;
         int minH = 450;
 
-
         Model.setMovieAndSeance( seancesListView.getSelectionModel().getSelectedItem());
         List<ScreeningRooms> screeningRooms = model.getDatabase().getScreeningRoomsList();
 
@@ -89,7 +88,6 @@ public class MainCustomerController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     private void goToMyReservations(ActionEvent actionEvent) throws IOException {
 
@@ -111,8 +109,6 @@ public class MainCustomerController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

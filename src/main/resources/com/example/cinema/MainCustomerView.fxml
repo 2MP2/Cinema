@@ -5,7 +5,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.MainCustomerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.MainCustomerController">
    <children>
       <Label fx:id="idLabel" layoutX="14.0" layoutY="14.0" text="Zalogowales sie jako KLIENT" />
       <Button layoutX="451.0" layoutY="187.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="130.0" text="Wyloguj się" />

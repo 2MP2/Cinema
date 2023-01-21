@@ -130,14 +130,10 @@ public class MainEmployeeController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-
     }
 
     @FXML
     private void goToAddFilm(ActionEvent actionEvent) throws IOException {
-
-
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeAddFilmView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -148,8 +144,6 @@ public class MainEmployeeController implements Initializable {
 
     @FXML
     private void goToAddSeances(ActionEvent actionEvent) throws IOException {
-
-
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeAddSeancesView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -160,8 +154,6 @@ public class MainEmployeeController implements Initializable {
 
     @FXML
     private void goToEditEmployee(ActionEvent actionEvent) throws IOException {
-
-
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeEditEmployView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

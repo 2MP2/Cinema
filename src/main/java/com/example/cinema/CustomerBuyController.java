@@ -58,20 +58,6 @@ public class CustomerBuyController implements Initializable {
     ChoiceBox<String> optionChoiceBox;
 
     @FXML
-    private void goToMenu(ActionEvent actionEvent) throws IOException {
-        fxmlLoader = new FXMLLoader(getClass().getResource("MainCustomerView.fxml"));
-        root = fxmlLoader.load();
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-        ((Node)actionEvent.getSource()).getScene().getWindow().setHeight(420);
-        ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(620);
-
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
     private void sellTicket(ActionEvent actionEvent) throws IOException{
         int totalAmountOfTicket = 0;
         int amount = normalTicketSpinner.getValue() + reducedTicketSpinner.getValue();
@@ -115,7 +101,6 @@ public class CustomerBuyController implements Initializable {
                     }
                 }
 
-
                 fxmlLoader = new FXMLLoader(getClass().getResource("CustomerBuyView.fxml"));
                 root = fxmlLoader.load();
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -131,9 +116,7 @@ public class CustomerBuyController implements Initializable {
                 idClientLabel.setText("ERROR");
                 System.out.println(e.getMessage());
             }
-
         }
-
     }
 
     private double calculatePrice(){
@@ -171,9 +154,7 @@ public class CustomerBuyController implements Initializable {
             else if(ts.getReserved_or_taken() == 'R'){
                 tabART[(ts.getRow_identifier() - 'A')][ts.getColumn_identifier()-1] = 'T';
             }
-
         }
-
         screen.setWidth(col*55);
 
         for(int i = 1; i <row+1; i++){
@@ -215,6 +196,20 @@ public class CustomerBuyController implements Initializable {
             }
         }
 
+    }
+
+    @FXML
+    private void goToMenu(ActionEvent actionEvent) throws IOException {
+        fxmlLoader = new FXMLLoader(getClass().getResource("MainCustomerView.fxml"));
+        root = fxmlLoader.load();
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+        ((Node)actionEvent.getSource()).getScene().getWindow().setHeight(420);
+        ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(620);
+
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void setModel(Model model) {

@@ -40,6 +40,22 @@ public class CustomerMyTicketController implements Initializable {
     ListView<TSandMandS> boughtTicketListView, resListView;
     @FXML
     Button deleteRes;
+
+
+    @FXML
+    private void deleteReservation(ActionEvent actionEvent) throws IOException{
+        try {
+            model.getDatabase().deleteReservation(resListView.getSelectionModel().getSelectedItem().getTakenSeat().getId_seat(),model.getId());
+            resListView.getItems().remove(resListView.getSelectionModel().getSelectedItem());
+
+            errorLabel.setText("Usunięto rezerwację");
+            errorLabel.setVisible(true);
+        }catch (Exception e){
+            errorLabel.setText("Nie udało się usunąć rezerwacji");
+            errorLabel.setVisible(true);
+        }
+    }
+
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
         fxmlLoader = new FXMLLoader(getClass().getResource("MainCustomerView.fxml"));
@@ -55,20 +71,6 @@ public class CustomerMyTicketController implements Initializable {
             throw new IllegalStateException("Model can only be initialized once");
 
         CustomerMyTicketController.model = model;
-    }
-
-    @FXML
-    private void deleteReservation(ActionEvent actionEvent) throws IOException{
-        try {
-            model.getDatabase().deleteReservation(resListView.getSelectionModel().getSelectedItem().getTakenSeat().getId_seat(),model.getId());
-            resListView.getItems().remove(resListView.getSelectionModel().getSelectedItem());
-
-            errorLabel.setText("Usunięto rezerwację");
-            errorLabel.setVisible(true);
-        }catch (Exception e){
-            errorLabel.setText("Nie udało się usunąć rezerwacji");
-            errorLabel.setVisible(true);
-        }
     }
 
     @Override

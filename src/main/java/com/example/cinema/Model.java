@@ -7,6 +7,7 @@ public class Model {
 
     private long id = 0;
     private String login = "";
+    private final DatabaseConnection database;
 
     private static MovieAndSeance movieAndSeance;
 
@@ -17,9 +18,6 @@ public class Model {
     public static void setMovieAndSeance(MovieAndSeance movieAndSeance) {
         Model.movieAndSeance = movieAndSeance;
     }
-
-
-
 
     public long getId() {
         return id;
@@ -41,8 +39,6 @@ public class Model {
         id = 0;
         login ="";
     }
-
-    private final DatabaseConnection database;
 
     public Model(DatabaseConnection databaseConnection) {
         database = databaseConnection;

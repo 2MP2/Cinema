@@ -43,7 +43,6 @@ public class EmployeeAddEmployeeController implements Initializable {
 
         EmployeeAddEmployeeController.model = model;
     }
-
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeEditEmployView.fxml"));
@@ -53,7 +52,6 @@ public class EmployeeAddEmployeeController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     private void addEmployee(ActionEvent actionEvent) throws IOException {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -75,7 +73,10 @@ public class EmployeeAddEmployeeController implements Initializable {
                 return;
             }
 
-            model.getDatabase().insertEmployee(loginTextField.getText(), passwordTextField.getText(), nameTextField.getText(), surnameTextField.getText(), phoneTextField.getText(), timestamp, positionChoiceBox.getSelectionModel().getSelectedItem().getId_position());
+            model.getDatabase().insertEmployee(loginTextField.getText(), passwordTextField.getText(),
+                    nameTextField.getText(), surnameTextField.getText(),
+                    phoneTextField.getText(), timestamp,
+                    positionChoiceBox.getSelectionModel().getSelectedItem().getId_position());
 
             errorLabel.setText("DODANO PRACOWNIKA ");
             errorLabel.setVisible(true);

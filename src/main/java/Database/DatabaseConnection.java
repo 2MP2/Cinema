@@ -96,21 +96,15 @@ public final class DatabaseConnection {
 
         return true;
     }
-    public boolean customerAccountDeactivation(long in_id_customer)
+    public boolean customerAccountDeactivation(long in_id_customer) throws SQLException
     {
         String sql_string = "CALL c##cinema.customerAccountDeactivation(?)";
 
-        try {
             CallableStatement cs = con.prepareCall(sql_string);
             cs.setLong(1,in_id_customer);
 
             cs.execute();
             cs.close();
-        }catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            return false;
-        }
 
         return true;
     }

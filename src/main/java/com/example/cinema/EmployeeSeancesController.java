@@ -139,9 +139,7 @@ public class EmployeeSeancesController implements Initializable {
                 idClientLabel.setText("ERROR");
                 System.out.println(e.getMessage());
             }
-
         }
-
     }
 
     private double calculatePrice(){
@@ -181,7 +179,6 @@ public class EmployeeSeancesController implements Initializable {
                 idCustomerMap.put(ts.getRow_identifier() +" "+ ts.getColumn_identifier(),ts.getId_customer());
                 idSeatMap.put(ts.getRow_identifier() +" "+ ts.getColumn_identifier(),ts.getId_seat());
             }
-
         }
 
         screen.setWidth(col*55);
@@ -237,7 +234,6 @@ public class EmployeeSeancesController implements Initializable {
                 seatsGridPane.setHgap(5);
             }
         }
-
     }
 
     @Override
