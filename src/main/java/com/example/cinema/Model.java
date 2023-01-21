@@ -8,7 +8,16 @@ public class Model {
     private long id = 0;
     private String login = "";
 
-    public static MovieAndSeance movieAndSeance;
+    private static MovieAndSeance movieAndSeance;
+
+    public static MovieAndSeance getMovieAndSeance() {
+        return movieAndSeance;
+    }
+
+    public static void setMovieAndSeance(MovieAndSeance movieAndSeance) {
+        Model.movieAndSeance = movieAndSeance;
+    }
+
 
 
 

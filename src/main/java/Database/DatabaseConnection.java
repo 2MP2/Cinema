@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DatabaseConnection {
+public final class DatabaseConnection {
     private final Connection con;
     public DatabaseConnection(String url, String login, String password) throws SQLException {
         this.con = DriverManager.getConnection(url,login,password);

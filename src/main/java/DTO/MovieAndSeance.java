@@ -4,31 +4,31 @@ import Model.Movies;
 import Model.Seances;
 
 public class MovieAndSeance {
-    private Movies m;
-    private Seances s;
+    private final Movies movie;
+    private final Seances seance;
 
     public MovieAndSeance(Movies m, Seances s) {
-        this.m = m;
-        this.s = s;
+        this.movie = m;
+        this.seance = s;
     }
 
-    public Movies getM() {
-        return m;
+    public Movies getMovie() {
+        return movie;
     }
 
-    public Seances getS() {
-        return s;
+    public Seances getSeance() {
+        return seance;
     }
 
     @Override
     public String toString() {
-        return  m.getTitle() + " "+ m.getLength() + "min "
-                + Math.round(s.getTicket_price() * 100.00)/100.00 + "zł "
-                + s.getStart_time().getHours() + ":" + ((s.getStart_time().getMinutes()<10) ? "0" : "") + s.getStart_time().getMinutes() + "-"
-                + s.getEnd_time().getHours() + ":" + s.getEnd_time().getMinutes()
-                + ((Character.toUpperCase(m.getDub_sub_lec()) == 'D') ? " DUBBING"
-                : ((Character.toUpperCase(m.getDub_sub_lec()) == 'S') ? " NAPISY"
-                : ((Character.toUpperCase(m.getDub_sub_lec()) == 'L') ? " LECTOR" : " XXX")))
-                + ((m.isIs3D()) ? " 3D" : " 2D");
+        return  movie.getTitle() + " "+ movie.getLength() + "min "
+                + Math.round(seance.getTicket_price() * 100.00)/100.00 + "zł "
+                + seance.getStart_time().getHours() + ":" + ((seance.getStart_time().getMinutes()<10) ? "0" : "") + seance.getStart_time().getMinutes() + "-"
+                + seance.getEnd_time().getHours() + ":" + seance.getEnd_time().getMinutes()
+                + ((Character.toUpperCase(movie.getDub_sub_lec()) == 'D') ? " DUBBING"
+                : ((Character.toUpperCase(movie.getDub_sub_lec()) == 'S') ? " NAPISY"
+                : ((Character.toUpperCase(movie.getDub_sub_lec()) == 'L') ? " LECTOR" : " XXX")))
+                + ((movie.isIs3D()) ? " 3D" : " 2D");
     }
 }

@@ -1,8 +1,6 @@
 package com.example.cinema;
 
-import DTO.MovieAndSeance;
 import Model.ScreeningRooms;
-import Model.Seances;
 import Model.TakenSeats;
 
 import javafx.event.ActionEvent;
@@ -69,15 +67,34 @@ public class EmployeeSeancesController implements Initializable {
         List<ScreeningRooms> screeningRooms = model.getDatabase().getScreeningRoomsList();
 
         for (ScreeningRooms sr: screeningRooms){
-            if(sr.getId_screening_room() == Model.movieAndSeance.getS().getId_screening_room()){
+            if(sr.getId_screening_room() == Model.getMovieAndSeance().getSeance().getId_screening_room()){
                 row = sr.getAmount_of_rows();
                 col = sr.getAmount_of_columns();
+                break;
             }
         }
 
-        List<TakenSeats> takenSeats = model.getDatabase().getTakenSeatsList();
+        List<TakenSeats> takenSeats = model.getDatabase().getTakenSeatsListForSeance(Model.getMovieAndSeance().getSeance().getId_seance());
         seats = new char[row][col];
 
+        for (int i = 0; i < row; i++){
+            for(int j = 0;j <col; j++){
+                seats[i][j] = 'A';
+            }
+        }
+
+        assert takenSeats != null;
+        for (TakenSeats ts: takenSeats){
+            seats[(int)(ts.getRow_identifier() - 'A')][ts.getColumn_identifier()-1] = ts.getReserved_or_taken();
+        }
+
+
+        for (int i = 0; i < row; i++){
+            for(int j = 0;j <col; j++){
+                System.out.print(seats[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
 
@@ -97,6 +114,7 @@ public class EmployeeSeancesController implements Initializable {
                         int idCol = Integer.parseInt(id[1]) - 1;
 
                         System.out.println(idRow + " " + idCol);
+                        System.out.println(seats[idRow][idCol]);
 
                     }
                 });

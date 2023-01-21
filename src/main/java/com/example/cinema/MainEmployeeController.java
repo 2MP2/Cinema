@@ -103,7 +103,7 @@ public class MainEmployeeController implements Initializable {
     @FXML
     private void goToSeances(ActionEvent actionEvent) throws IOException {
 
-        Model.movieAndSeance = seancesListView.getSelectionModel().getSelectedItem();
+        Model.setMovieAndSeance( seancesListView.getSelectionModel().getSelectedItem());
 
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeSeancesView.fxml"));
         root = fxmlLoader.load();
