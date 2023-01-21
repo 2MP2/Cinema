@@ -2,6 +2,7 @@ package com.example.cinema;
 
 import Model.Seances;
 import Model.Movies;
+import Model.ScreeningRooms;
 
 import DTO.MovieAndSeance;
 import javafx.beans.value.ChangeListener;
@@ -103,14 +104,34 @@ public class MainEmployeeController implements Initializable {
     @FXML
     private void goToSeances(ActionEvent actionEvent) throws IOException {
 
+        int row = 10;
+        int col = 10;
+        int minH = 400;
+
+
         Model.setMovieAndSeance( seancesListView.getSelectionModel().getSelectedItem());
+        List<ScreeningRooms> screeningRooms = model.getDatabase().getScreeningRoomsList();
+
+        for (ScreeningRooms sr: screeningRooms){
+            if(sr.getId_screening_room() == Model.getMovieAndSeance().getSeance().getId_screening_room()){
+                row = sr.getAmount_of_rows();
+                col = sr.getAmount_of_columns();
+                break;
+            }
+        }
 
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeSeancesView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+        ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(55*col+250);
+        ((Node) actionEvent.getSource()).getScene().getWindow().setHeight(Math.max(minH, 55 * row + 150));
+
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
     }
 
     @FXML

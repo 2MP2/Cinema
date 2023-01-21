@@ -1,15 +1,34 @@
 package DTO;
 
 import Model.Movies;
+import Model.ScreeningRooms;
 import Model.Seances;
+import com.example.cinema.Model;
+
+import java.util.List;
 
 public class MovieAndSeance {
     private final Movies movie;
     private final Seances seance;
 
+    //private final int row;
+    //private final int col;
+
     public MovieAndSeance(Movies m, Seances s) {
         this.movie = m;
         this.seance = s;
+
+        /*
+        List<ScreeningRooms> screeningRooms = Model.getDatabase().getScreeningRoomsList();
+
+        for (ScreeningRooms sr: screeningRooms){
+            if(sr.getId_screening_room() == Model.getMovieAndSeance().getSeance().getId_screening_room()){
+                row = sr.getAmount_of_rows();
+                col = sr.getAmount_of_columns();
+                break;
+            }
+        }
+        */
     }
 
     public Movies getMovie() {

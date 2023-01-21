@@ -545,4 +545,18 @@ public final class DatabaseConnection {
 
     }
 
+    public long getTransactionId() throws SQLException{
+        long id;
+        String sql_string = "begin ? := c##cinema.getTransactionId; end;";
+
+        CallableStatement cs = con.prepareCall(sql_string);
+        cs.registerOutParameter(1,Types.NUMERIC);
+        cs.execute();
+
+        id = cs.getLong(1);
+        cs.close();
+
+        return id;
+    }
+
 }

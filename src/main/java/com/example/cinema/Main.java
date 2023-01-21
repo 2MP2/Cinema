@@ -1,6 +1,7 @@
 package com.example.cinema;
 
 import Database.DatabaseConnection;
+import Test.TestReczny;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
