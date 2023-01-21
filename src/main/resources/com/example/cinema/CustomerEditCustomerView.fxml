@@ -117,7 +117,7 @@
          </font>
       </Button>
       <CheckBox fx:id="confirmCheckBox" layoutX="232.0" layoutY="541.0" mnemonicParsing="false" text="Potwierdzam" />
-      <Label fx:id="errorLabel2" layoutX="398.0" layoutY="491.0" text="xxx" textFill="RED">
+      <Label fx:id="errorLabel2" layoutX="398.0" layoutY="491.0" text="ERROR" textFill="RED" visible="false">
          <font>
             <Font size="18.0" />
          </font>

@@ -108,6 +108,7 @@ public class CustomerEditCustomerController implements Initializable {
         if(confirmCheckBox.isSelected()){
             try {
                 model.getDatabase().customerAccountDeactivation(model.getId());
+                model.clear();
 
                 fxmlLoader = new FXMLLoader(getClass().getResource("StartView.fxml"));
                 root = fxmlLoader.load();
