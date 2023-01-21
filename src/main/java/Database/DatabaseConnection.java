@@ -417,7 +417,7 @@ public class DatabaseConnection {
 
             while (rs.next())
             {
-                list.add(new TakenSeats(rs.getLong(1),rs.getTimestamp(2),rs.getString(3).charAt(0),rs.getInt(4),rs.getString(5).charAt(0),rs.getLong(6),rs.getLong(7),rs.getLong(8)));
+                    list.add(new TakenSeats(rs.getLong(1),rs.getTimestamp(2),rs.getString(3).charAt(0),rs.getInt(4),rs.getString(5).charAt(0),rs.getLong(6),rs.getLong(7),rs.getLong(8)));
             }
 
         }catch (Exception e)
@@ -427,6 +427,49 @@ public class DatabaseConnection {
         }
         return list;
     }
+
+    public List<TakenSeats> getTakenSeatsListForSeance(long idSeance)
+    {
+        List <TakenSeats> list= new ArrayList<>();
+        try {
+            Statement statement = con.createStatement();
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewTeakenseats");
+
+            while (rs.next())
+            {
+                if(idSeance == rs.getLong(6))
+                    list.add(new TakenSeats(rs.getLong(1),rs.getTimestamp(2),rs.getString(3).charAt(0),rs.getInt(4),rs.getString(5).charAt(0),rs.getLong(6),rs.getLong(7),rs.getLong(8)));
+            }
+
+        }catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        return list;
+    }
+
+    public List<TakenSeats> getTakenSeatsListForCustomer(long idCustomer)
+    {
+        List <TakenSeats> list= new ArrayList<>();
+        try {
+            Statement statement = con.createStatement();
+            ResultSet rs=statement.executeQuery("SELECT * FROM c##cinema.ViewTeakenseats");
+
+            while (rs.next())
+            {
+                if(idCustomer == rs.getLong(8))
+                    list.add(new TakenSeats(rs.getLong(1),rs.getTimestamp(2),rs.getString(3).charAt(0),rs.getInt(4),rs.getString(5).charAt(0),rs.getLong(6),rs.getLong(7),rs.getLong(8)));
+            }
+
+        }catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        return list;
+    }
+
 
     public List<Transactions> getTransactionsList()
     {

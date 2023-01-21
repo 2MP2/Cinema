@@ -35,6 +35,8 @@ public class EmployeeSeancesController implements Initializable {
 
     private int row,col;
 
+    private char[][] seats;
+
 
     @FXML
     GridPane seatsGridPane;
@@ -73,6 +75,11 @@ public class EmployeeSeancesController implements Initializable {
             }
         }
 
+        List<TakenSeats> takenSeats = model.getDatabase().getTakenSeatsList();
+        seats = new char[row][col];
+
+
+
 
         screen.setWidth(row*55);
         for(int i = 0; i <row; i++){
@@ -80,15 +87,20 @@ public class EmployeeSeancesController implements Initializable {
             for (int j = 1;j <col+1; j ++){
                 if(i == 0)
                     seatsGridPane.getRowConstraints().add(new RowConstraints(50));
+                seats[i][j-1] = 'A';
                 Button button = new Button(Character.toString(j - 1+ 'A') + " " + (i + 1));
                 button.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent actionEvent) {
+                        String[] id = ((Button)actionEvent.getSource()).getText().split(" ");
+                        int idRow = (int)(id[0].charAt(0) - 'A');
+                        int idCol = Integer.parseInt(id[1]) - 1;
+
+                        System.out.println(idRow + " " + idCol);
 
                     }
                 });
                 button.setPrefSize(50,50);
-
 
                 seatsGridPane.add(button,i, j);
                 seatsGridPane.setVgap(5);

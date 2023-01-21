@@ -73,7 +73,7 @@ public class CustomerMyTicketController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        List<TakenSeats> takenSeats = model.getDatabase().getTakenSeatsList();
+        List<TakenSeats> takenSeats = model.getDatabase().getTakenSeatsListForCustomer(model.getId());
         List<Movies> movies = model.getDatabase().getMoviesList();
         List<Seances> seances = model.getDatabase().getSeancesList();
 
