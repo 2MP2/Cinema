@@ -1,11 +1,16 @@
 package com.example.cinema;
 
+import DTO.MovieAndSeance;
 import Database.DatabaseConnection;
 
 public class Model {
 
     private long id = 0;
     private String login = "";
+
+    public static MovieAndSeance movieAndSeance;
+
+
 
     public long getId() {
         return id;

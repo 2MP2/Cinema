@@ -1,7 +1,6 @@
 package com.example.cinema;
 
 import Database.DatabaseConnection;
-import Test.TestReczny;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,7 +30,7 @@ public class Main extends Application {
         EmployeeAddSeancesController.setModel(model);
         EmployeeEditEmployeeController.setModel(model);
         EmployeeFireEmployeeController.setModel(model);
-        EmployeeSeancesView.setModel(model);
+        EmployeeSeancesController.setModel(model);
 
         CustomerBuyController.setModel(model);
         CustomerEditCustomerController.setModel(model);

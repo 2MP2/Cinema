@@ -2,19 +2,21 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.MainEmployeeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.MainEmployeeController">
    <children>
       <Label fx:id="idLabel" layoutX="15.0" layoutY="14.0" text="Zalogowałeś sie jako Pracownik">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button layoutX="508.0" layoutY="11.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
-      <Button layoutY="48.0" mnemonicParsing="false" onAction="#goToSeances" prefHeight="70.0" prefWidth="600.0" text="Seanse (sprzedaj bilet)" />
-      <Button layoutY="118.0" mnemonicParsing="false" onAction="#goToAddFilm" prefHeight="70.0" prefWidth="600.0" text="Dodaj filmn" />
-      <Button fx:id="editEmployeeButton" layoutY="258.0" mnemonicParsing="false" onAction="#goToEditEmployee" prefHeight="70.0" prefWidth="600.0" text="Dodaj/Zwolnij pracownika" visible="false" />
-      <Button layoutY="188.0" mnemonicParsing="false" onAction="#goToAddSeances" prefHeight="70.0" prefWidth="600.0" text="Dodaj seans" />
+      <Button layoutX="508.0" layoutY="338.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+      <Button fx:id="goToSeancesButton" disable="true" layoutX="441.0" layoutY="121.0" mnemonicParsing="false" onAction="#goToSeances" prefHeight="33.0" prefWidth="156.0" text="Seanse (sprzedaj bilet)" />
+      <Button layoutX="442.0" layoutY="86.0" mnemonicParsing="false" onAction="#goToAddFilm" prefHeight="33.0" prefWidth="156.0" text="Dodaj filmn" />
+      <Button fx:id="editEmployeeButton" layoutX="441.0" layoutY="156.0" mnemonicParsing="false" onAction="#goToEditEmployee" prefHeight="33.0" prefWidth="156.0" text="Dodaj/Zwolnij pracownika" />
+      <Button layoutX="442.0" layoutY="49.0" mnemonicParsing="false" onAction="#goToAddSeances" prefHeight="33.0" prefWidth="156.0" text="Dodaj seans" />
+      <ListView fx:id="seancesListView" layoutX="14.0" layoutY="37.0" prefHeight="326.0" prefWidth="423.0" />
    </children>
 </AnchorPane>

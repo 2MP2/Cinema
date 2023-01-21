@@ -1,5 +1,11 @@
 package com.example.cinema;
 
+import Model.Seances;
+import Model.Movies;
+
+import DTO.MovieAndSeance;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,11 +15,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainEmployeeController implements Initializable {
@@ -27,7 +35,10 @@ public class MainEmployeeController implements Initializable {
     @FXML
     private Label idLabel;
     @FXML
-    private Button editEmployeeButton;
+    private Button editEmployeeButton, goToSeancesButton;
+    @FXML
+    ListView<MovieAndSeance> seancesListView;
+
 
     public static void setModel(Model model) {
         if(MainEmployeeController.model != null)
@@ -39,6 +50,28 @@ public class MainEmployeeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        seancesListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<MovieAndSeance>() {
+            @Override
+            public void changed(ObservableValue<? extends MovieAndSeance> observableValue, MovieAndSeance movieAndSeance, MovieAndSeance t1) {
+                goToSeancesButton.setDisable(false);
+            }
+        });
+
+        List<Seances> listS = model.getDatabase().getSeancesList();
+        List<Movies> listM = model.getDatabase().getMoviesList();
+
+        for (Seances s: listS)
+        {
+            for(Movies m:listM)
+            {
+                if(s.getId_movie()==m.getId_movie())
+                {
+                    MovieAndSeance movieAndSeance = new MovieAndSeance(m,s);
+                    seancesListView.getItems().add(movieAndSeance);
+                    break;
+                }
+            }
+        }
 
         try {
             if(model.getDatabase().isEmployeeAnManager(model.getId()))
@@ -70,6 +103,7 @@ public class MainEmployeeController implements Initializable {
     @FXML
     private void goToSeances(ActionEvent actionEvent) throws IOException {
 
+        Model.movieAndSeance = seancesListView.getSelectionModel().getSelectedItem();
 
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeSeancesView.fxml"));
         root = fxmlLoader.load();
