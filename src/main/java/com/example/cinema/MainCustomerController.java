@@ -3,6 +3,7 @@ package com.example.cinema;
 import DTO.MovieAndSeance;
 import Model.Movies;
 import Model.Seances;
+import Model.ScreeningRooms;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -61,9 +62,29 @@ public class MainCustomerController implements Initializable {
     @FXML
     private void goToBuyTicket(ActionEvent actionEvent) throws IOException {
 
-        fxmlLoader = new FXMLLoader(getClass().getResource("CustomerPreBuyView.fxml"));
+        int row = 10;
+        int col = 10;
+        int minH = 450;
+
+
+        Model.setMovieAndSeance( seancesListView.getSelectionModel().getSelectedItem());
+        List<ScreeningRooms> screeningRooms = model.getDatabase().getScreeningRoomsList();
+
+        for (ScreeningRooms sr: screeningRooms){
+            if(sr.getId_screening_room() == Model.getMovieAndSeance().getSeance().getId_screening_room()){
+                row = sr.getAmount_of_rows();
+                col = sr.getAmount_of_columns();
+                break;
+            }
+        }
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("CustomerBuyView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+        ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(55*col+250);
+        ((Node) actionEvent.getSource()).getScene().getWindow().setHeight(Math.max(minH, 55 * row + 150));
+
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

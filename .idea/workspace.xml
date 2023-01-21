@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="s">
+    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="cały employee chyba dziala">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/MovieAndSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/MovieAndSeance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerBuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerBuyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerPreBuyController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeSeancesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/EmployeeSeancesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainEmployeeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainEmployeeView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerBuyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerBuyView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerPreBuyView.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,7 @@
       <workItem from="1674139543164" duration="44262000" />
       <workItem from="1674238705494" duration="29742000" />
       <workItem from="1674307818302" duration="1131000" />
-      <workItem from="1674309107300" duration="26069000" />
+      <workItem from="1674309107300" duration="29441000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -283,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674314667732</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="cały employee chyba dziala">
+      <created>1674335912448</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1674335912448</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +354,8 @@
     <MESSAGE value="Wciaz problem ale dodano juz diable na guziki" />
     <MESSAGE value="działa wszystko bez sprzedazy biletow" />
     <MESSAGE value="s" />
-    <option name="LAST_COMMIT_MESSAGE" value="s" />
+    <MESSAGE value="cały employee chyba dziala" />
+    <option name="LAST_COMMIT_MESSAGE" value="cały employee chyba dziala" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

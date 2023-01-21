@@ -267,10 +267,5 @@ public class EmployeeSeancesController implements Initializable {
 
         normalTicketSpinner.setValueFactory(valueFactory1);
         reducedTicketSpinner.setValueFactory(valueFactory2);
-
-
-
-
-
     }
 }

@@ -36,7 +36,6 @@ public class Main extends Application {
         CustomerBuyController.setModel(model);
         CustomerEditCustomerController.setModel(model);
         CustomerMyTicketController.setModel(model);
-        CustomerPreBuyController.setModel(model);
 
         FXMLLoader starViewLoader = new FXMLLoader(Main.class.getResource("StartView.fxml"));
         root = starViewLoader.load();
