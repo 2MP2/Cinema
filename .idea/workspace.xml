@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="działo wstępnie całość">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerEditCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerEditCustomerController.java" afterDir="false" />
+    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="dziala bez duzych testow">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerBuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerBuyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerMyTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerMyTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +88,7 @@
       <workItem from="1674139543164" duration="44262000" />
       <workItem from="1674238705494" duration="29742000" />
       <workItem from="1674307818302" duration="1131000" />
-      <workItem from="1674309107300" duration="31184000" />
+      <workItem from="1674309107300" duration="33167000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -296,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674341092820</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="dziala bez duzych testow">
+      <created>1674341247841</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1674341247841</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +374,8 @@
     <MESSAGE value="s" />
     <MESSAGE value="cały employee chyba dziala" />
     <MESSAGE value="działo wstępnie całość" />
-    <option name="LAST_COMMIT_MESSAGE" value="działo wstępnie całość" />
+    <MESSAGE value="dziala bez duzych testow" />
+    <option name="LAST_COMMIT_MESSAGE" value="dziala bez duzych testow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -95,9 +95,9 @@ public class EmployeeSeancesController implements Initializable {
 
         if(totalAmountOfTicket > amount)
         {
-            idClientLabel.setText("za duzo biletów");
-        }else if(totalAmountOfTicket < amount){
             idClientLabel.setText("za mało biletów");
+        }else if(totalAmountOfTicket < amount){
+            idClientLabel.setText("za duzo biletów");
         }else{
             try {
                 model.getDatabase().insertTransactions(calculatePrice(),normalTicketSpinner.getValue(),reducedTicketSpinner.getValue(),
