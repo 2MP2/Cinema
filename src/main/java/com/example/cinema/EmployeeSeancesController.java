@@ -32,6 +32,15 @@ import java.util.ResourceBundle;
 
 public class EmployeeSeancesController implements Initializable {
 
+    //zamysł sprzedawania jest taki, że tabART posiada informacje czy siedznie jest zajęte zarez czy wolne
+    //a tablica tabIsCoose posiada aktualnie wybrane siedzenia
+    //podczas sprzedarzy sprawdzane są po kolei wszystkie siedzeni czy zostały wybrane
+    //a potem w zalezności czy były zarezerwowane czy wolne uswa rezerwacje robi tranzakcje i dodaje siedzeni lub
+    //to samo ale bez usuniecia rezerwacji
+    //pola odpowiadające polą w bazie danych i w tablicach bierze się sprawdzając nazyw guzików
+    //mapy posiadaja id aby później móc odwołać rezerwacje
+
+
     private static Model model;
     private FXMLLoader fxmlLoader;
     private Stage stage;

@@ -106,7 +106,7 @@ public class MainEmployeeController implements Initializable {
 
         int row = 10;
         int col = 10;
-        int minH = 400;
+        int minSceneHeight = 400;
 
 
         Model.setMovieAndSeance( seancesListView.getSelectionModel().getSelectedItem());
@@ -123,7 +123,7 @@ public class MainEmployeeController implements Initializable {
         fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeSeancesView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,55*col+250,Math.max(minH, 55 * row + 150));
+        scene = new Scene(root,55*col+250,Math.max(minSceneHeight, 55 * row + 150));
         stage.setScene(scene);
         stage.show();
     }

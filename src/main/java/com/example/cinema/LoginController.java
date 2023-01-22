@@ -39,21 +39,21 @@ public class LoginController implements Initializable {
             errorLabel.setText("Wybierz opcje logowania");
         }
         else if(choiceBox.getSelectionModel().getSelectedItem().equals("Klient")) {
-            long id;
+            long idCustomer;
 
             try {
-                id = model.getDatabase().logInCustomer(loginTextField.getText(),passwordTextField.getText());
-                model.setId(id);
+                idCustomer = model.getDatabase().logInCustomer(loginTextField.getText(),passwordTextField.getText());
+                model.setId(idCustomer);
                 model.setLogin(loginTextField.getText());
             }catch (Exception e){
-                id = 0;
+                idCustomer = 0;
                 errorLabel.setVisible(true);
                 errorLabel.setText("Błąd ");
                 System.out.println(e.getMessage());
             }
 
-            if(id>0){ //warunek zawierajace metode z databes logowania
-                model.setId(id);
+            if(idCustomer>0){ //jeśli id jest zero to dane logowani nie istnieją (zapytanie zwraca 0)
+                model.setId(idCustomer);
                 model.setLogin(loginTextField.getText());
 
                 root = FXMLLoader.load(getClass().getResource("MainCustomerView.fxml"));
@@ -65,23 +65,23 @@ public class LoginController implements Initializable {
             }
         }
         else if(choiceBox.getSelectionModel().getSelectedItem().equals("Pracownik")){
-            long id;
+            long idEmployye;
 
             try {
-                id = model.getDatabase().logInEmployee(loginTextField.getText(),passwordTextField.getText());
-                model.setId(id);
+                idEmployye = model.getDatabase().logInEmployee(loginTextField.getText(),passwordTextField.getText());
+                model.setId(idEmployye);
                 model.setLogin(loginTextField.getText());
             }catch (Exception e){
-                id = 0;
+                idEmployye = 0;
                 errorLabel.setVisible(true);
                 errorLabel.setText("Błąd");
             }
 
-            if(id>0){ //warunek zawierajace metode z databes logowania
+            if(idEmployye>0){ //jeśli id jest zero to dane logowani nie istnieją (zapytanie zwraca 0)
                 root = FXMLLoader.load(getClass().getResource("MainEmployeeView.fxml"));
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
-                model.setId(id);
+                model.setId(idEmployye);
                 model.setLogin(loginTextField.getText());
 
                 scene = new Scene(root);

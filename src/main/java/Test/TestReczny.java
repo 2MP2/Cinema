@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class TestReczny {
-    /*
+
     public void test() throws SQLException {
         DatabaseConnection dbc = new DatabaseConnection("jdbc:oracle:thin:@DESKTOP-NJJMCEP:1521:xe","c##cinema_user","cinema_user");
 
@@ -106,5 +106,5 @@ public class TestReczny {
         }
     }
 
-     */
+
 }

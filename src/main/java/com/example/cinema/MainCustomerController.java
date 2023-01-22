@@ -65,7 +65,7 @@ public class MainCustomerController implements Initializable {
 
         int row = 10;
         int col = 10;
-        int minH = 450;
+        int minSceneHeight = 450;
 
         Model.setMovieAndSeance( seancesListView.getSelectionModel().getSelectedItem());
         List<ScreeningRooms> screeningRooms = model.getDatabase().getScreeningRoomsList();
@@ -82,7 +82,7 @@ public class MainCustomerController implements Initializable {
         fxmlLoader = new FXMLLoader(getClass().getResource("CustomerBuyView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root,55*col+250,Math.max(minH, 55 * row + 150));
+        scene = new Scene(root,55*col+250,Math.max(minSceneHeight, 55 * row + 150));
         stage.setScene(scene);
         stage.show();
 

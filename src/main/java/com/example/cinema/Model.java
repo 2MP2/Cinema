@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Model {
+    //klasa biedny Singleton
+    //posiada bazy danych aby tylko raz było połączenie
 
     private long id = 0;
     private String login = "";

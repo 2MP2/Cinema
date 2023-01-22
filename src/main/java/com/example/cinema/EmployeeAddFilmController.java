@@ -87,12 +87,12 @@ public class EmployeeAddFilmController implements Initializable {
             return;
         }
 
-        Timestamp timestamp1;
-        Timestamp timestamp2;
+        Timestamp borrowDate;
+        Timestamp returnDate;
 
         try {
-            timestamp1 = new Timestamp(getDataPicker.getValue().getYear()-1900,getDataPicker.getValue().getMonthValue()-1,getDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
-            timestamp2 = new Timestamp(returnDataPicker.getValue().getYear()-1900,returnDataPicker.getValue().getMonthValue()-1,returnDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
+            borrowDate = new Timestamp(getDataPicker.getValue().getYear()-1900,getDataPicker.getValue().getMonthValue()-1,getDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
+            returnDate = new Timestamp(returnDataPicker.getValue().getYear()-1900,returnDataPicker.getValue().getMonthValue()-1,returnDataPicker.getValue().getDayOfMonth(),0,0,0,0 );
 
         }catch (Exception e)
         {
@@ -130,7 +130,7 @@ public class EmployeeAddFilmController implements Initializable {
         }
 
         try {
-            model.getDatabase().insertMovie(titleTextArea.getText(),min,distributorTextArea.getText(),timestamp1,timestamp2,dsl,is3D);
+            model.getDatabase().insertMovie(titleTextArea.getText(),min,distributorTextArea.getText(),borrowDate,returnDate,dsl,is3D);
             errorLabel.setText("DODANO FILM");
             errorLabel.setVisible(true);
         }catch (Exception  e)

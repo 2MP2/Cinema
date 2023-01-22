@@ -19,6 +19,7 @@ public class Main extends Application {
         Model model = new Model(databaseConnection);
         Parent root;
 
+        //dodawanie klasy z danymi do każdego kontrolera
         StartController.setModel(model);
 
         RegistrationController.setModel(model);
@@ -43,15 +44,15 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         stage.setTitle("Kino");
         stage.setResizable(false);
-        Image logo = new Image("C:\\Users\\48602\\Desktop\\Sem 5\\BazyDanych2\\Kod\\logo.png");
-        stage.getIcons().add(logo);
+        //Image logo = new Image("C:\\Users\\48602\\Desktop\\Sem 5\\BazyDanych2\\Kod\\logo.png");
+        //stage.getIcons().add(logo); //dodawanie loga
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) throws SQLException {
-        //TestReczny testReczny = new TestReczny();
-        //testReczny.test();
+        TestReczny testReczny = new TestReczny();
+        testReczny.test();
         launch();
     }
 }

@@ -74,7 +74,6 @@ public class CustomerEditCustomerController implements Initializable {
 
                 currentTele.setText(teleTextField.getText());
                 isChanged = true;
-                System.out.println("1111");
             }
 
             if(passwordField.getText() == null || passwordField.getText().trim().isEmpty()){

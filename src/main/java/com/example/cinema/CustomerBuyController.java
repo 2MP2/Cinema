@@ -29,6 +29,12 @@ import java.util.ResourceBundle;
 
 public class CustomerBuyController implements Initializable {
 
+    //zamysł sprzedawania jest taki, że tabART posiada informacje czy siedznie jest zajęte czy wolne
+    //a tablica tabIsCoose posiada aktualnie wybrane siedzenia
+    //podczas sprzedarzy sprawdzane są po kolei wszystkie siedzeni czy zostały wybrane
+    //a potem sprzedawane (tranzakjca jest tworzona a potem dodawane są siedzenia)
+    //pola odpowiadające polą w bazie danych i w tablicach bierze się sprawdzając nazyw guzików
+
     private static Model model;
     private FXMLLoader fxmlLoader;
     private Stage stage;
@@ -40,7 +46,6 @@ public class CustomerBuyController implements Initializable {
 
     private char[][] tabART;
     private boolean[][] tabIsChoose;
-
 
     @FXML
     GridPane seatsGridPane;

@@ -9,6 +9,8 @@ import java.util.List;
 
 public final class DatabaseConnection {
     private final Connection con;
+    //zamknięcie połączenia z bazą
+    //bez zamknięcia serwer się psuje
     public DatabaseConnection(String url, String login, String password) throws SQLException {
         this.con = DriverManager.getConnection(url,login,password);
 
@@ -96,7 +98,7 @@ public final class DatabaseConnection {
 
         return true;
     }
-    public boolean customerAccountDeactivation(long in_id_customer) throws SQLException
+    public boolean customerAccountDeactivation(long in_id_customer) throws SQLException //blokuje logowanie
     {
         String sql_string = "CALL c##cinema.customerAccountDeactivation(?)";
 
@@ -282,7 +284,7 @@ public final class DatabaseConnection {
         return true;
     }
 
-    public List<Customers> getCustomersList()
+    public List<Customers> getCustomersList() //bez loginów i haseł
     {
         List <Customers> list= new ArrayList<>();
         try {
@@ -302,7 +304,7 @@ public final class DatabaseConnection {
         return list;
     }
 
-    public List<Employees> getEmployeesList()
+    public List<Employees> getEmployeesList() //bez loginów i haseł
     {
         List <Employees> list= new ArrayList<>();
         try {
@@ -322,7 +324,7 @@ public final class DatabaseConnection {
         return list;
     }
 
-    public List<Movies> getMoviesList()
+    public List<Movies> getMoviesList() //bobiera film jeszcze nie oddane
     {
         List <Movies> list= new ArrayList<>();
         try {
@@ -382,7 +384,7 @@ public final class DatabaseConnection {
         return list;
     }
 
-    public List<Seances> getSeancesList()
+    public List<Seances> getSeancesList() // pobiera seanse których data rozpoczęcia jest późniejsza niż obecna
     {
         List <Seances> list= new ArrayList<>();
         try {
@@ -422,7 +424,8 @@ public final class DatabaseConnection {
         return list;
     }
 
-    public List<TakenSeats> getTakenSeatsListForSeance(long idSeance)
+    // pobiera seanse których data rozpoczęcia jest późniejsza niż obecna
+    public List<TakenSeats> getTakenSeatsListForSeance(long idSeance) //sortwoanie po naszej stronie. Seanse tylko
     {
         List <TakenSeats> list= new ArrayList<>();
         try {
@@ -443,7 +446,8 @@ public final class DatabaseConnection {
         return list;
     }
 
-    public List<TakenSeats> getTakenSeatsListForCustomer(long idCustomer)
+    // pobiera seanse których data rozpoczęcia jest późniejsza niż obecna
+    public List<TakenSeats> getTakenSeatsListForCustomer(long idCustomer) //sortwoanie po naszej stronie. Seanse tylko
     {
         List <TakenSeats> list= new ArrayList<>();
         try {
@@ -486,7 +490,7 @@ public final class DatabaseConnection {
         return list;
     }
 
-    public long logInCustomer(String in_login, String in_password) throws SQLException
+    public long logInCustomer(String in_login, String in_password) throws SQLException //zwarca idCustomer
     {
         long id;
         String sql_string = "begin ? := c##cinema.logInCustomer(?,?); end;";
@@ -504,7 +508,7 @@ public final class DatabaseConnection {
 
     }
 
-    public long logInEmployee(String in_login, String in_password) throws SQLException
+    public long logInEmployee(String in_login, String in_password) throws SQLException //zwraca idEmployee
     {
         long id;
         String sql_string = "begin ? := c##cinema.logInEmployee(?,?); end;";
@@ -539,6 +543,9 @@ public final class DatabaseConnection {
 
     }
 
+    //zwraca id ostatnio dodanej tranzakcji.
+    //Łata problem braku dostepu do id tanzakcji (id obługują sekwencje i triggery)
+    //Funkcjia od tworzenia tranzakcji nie zwraca tego id, gyż jest problem z jednoczesnym SELECTEM i INSERTEM w jednej funkcji
     public long getTransactionId() throws SQLException{
         long id;
         String sql_string = "begin ? := c##cinema.getTransactionId; end;";

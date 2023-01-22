@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="267.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.EmployeeAddSeancesController">
+<AnchorPane prefHeight="307.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cinema.EmployeeAddSeancesController">
    <children>
       <Button layoutX="14.0" layoutY="226.0" mnemonicParsing="false" onAction="#goToMenu" text="Powrót" />
       <Label layoutX="82.0" layoutY="48.0" text="Rozpoczęcie seansu: ">
@@ -43,7 +43,7 @@
       <ChoiceBox fx:id="filmChoiceBox" layoutX="250.0" layoutY="161.0" prefHeight="26.0" prefWidth="175.0" />
       <ChoiceBox fx:id="screeningRoomChoiceBox" layoutX="251.0" layoutY="197.0" prefHeight="26.0" prefWidth="175.0" />
       <Button layoutX="251.0" layoutY="230.0" mnemonicParsing="false" onAction="#addSeance" prefHeight="26.0" prefWidth="175.0" text="Dodaj seans" />
-      <Label fx:id="errorLabel" layoutX="249.0" layoutY="23.0" text="ERROR" textFill="#ff0000">
+      <Label fx:id="errorLabel" layoutX="251.0" layoutY="266.0" text="ERROR" textFill="#ff0000" visible="false">
          <font>
             <Font size="18.0" />
          </font>

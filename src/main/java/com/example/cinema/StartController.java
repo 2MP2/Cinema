@@ -58,7 +58,6 @@ public class StartController implements Initializable{
                     : ((Character.toUpperCase(dub_sub_lec) == 'L') ? " LECTOR" : " XXX")))
                     + ((is3D) ? " 3D" : " 2D");
 
-
             seancesListView.getItems().add(full);
         }
     }

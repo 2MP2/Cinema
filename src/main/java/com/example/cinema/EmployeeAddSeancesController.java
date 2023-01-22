@@ -63,13 +63,13 @@ public class EmployeeAddSeancesController implements Initializable {
 
     @FXML
     private void addSeance(ActionEvent actionEvent) throws IOException {
-        Timestamp timestamp1;
-        Timestamp timestamp2;
+        Timestamp startTime;
+        Timestamp endTime;
 
         try {
-            timestamp1 = new Timestamp(startDatePicker.getValue().getYear()-1900,startDatePicker.getValue().getMonthValue()-1,startDatePicker.getValue().getDayOfMonth(),
+            startTime = new Timestamp(startDatePicker.getValue().getYear()-1900,startDatePicker.getValue().getMonthValue()-1,startDatePicker.getValue().getDayOfMonth(),
                                             startHourSpinner.getValue(),startMinuteSpinner.getValue(),0,0 );
-            timestamp2 = new Timestamp(endDatePicker.getValue().getYear()-1900,endDatePicker.getValue().getMonthValue()-1,endDatePicker.getValue().getDayOfMonth(),
+            endTime = new Timestamp(endDatePicker.getValue().getYear()-1900,endDatePicker.getValue().getMonthValue()-1,endDatePicker.getValue().getDayOfMonth(),
                                             endHourSpinner.getValue(),endMinuteSpinner.getValue(),0,0 );
 
         }catch (Exception e)
@@ -102,11 +102,11 @@ public class EmployeeAddSeancesController implements Initializable {
         }
 
         Calendar cal =Calendar.getInstance();
-        cal.setTime(timestamp1);
+        cal.setTime(startTime);
         cal.add(Calendar.MINUTE, movie.getLength());
-        timestamp1 = new Timestamp(cal.getTime().getTime());
+        startTime = new Timestamp(cal.getTime().getTime());
 
-        int seanceDate = timestamp2.compareTo(timestamp1);
+        int seanceDate = endTime.compareTo(startTime);
 
         if(seanceDate <=0){
                 errorLabel.setText("Zły data lub czas");
@@ -117,7 +117,7 @@ public class EmployeeAddSeancesController implements Initializable {
         List<Seances> seances = model.getDatabase().getSeancesList();
         for (Seances s: seances){
             if(s.getId_screening_room() == screeningRoomChoiceBox.getSelectionModel().getSelectedItem().getId_screening_room()){
-                if(!(timestamp1.after(s.getEnd_time()) || timestamp2.before(s.getStart_time()))){
+                if(!(startTime.after(s.getEnd_time()) || endTime.before(s.getStart_time()))){
                     errorLabel.setText("JUŻ ISTNIEJE SEANSE W TYM TERMINIE");
                     errorLabel.setVisible(true);
                     return;
@@ -126,8 +126,21 @@ public class EmployeeAddSeancesController implements Initializable {
             }
         }
 
+        if(movie.getBorrow_date().after(startTime)){
+            errorLabel.setText("FILM JESZCZE NIE BEDZIE WYPOZYCZONY");
+            errorLabel.setVisible(true);
+            return;
+        }
+
+        if(movie.getReturn_date().before(endTime)){
+            errorLabel.setText("FILM JUZ ZOSTANIE ODDANY");
+            errorLabel.setVisible(true);
+            return;
+        }
+
+
         try {
-            model.getDatabase().insertSeance(timestamp1,timestamp2,price,movie.getId_movie(),screeningRoom.getId_screening_room());
+            model.getDatabase().insertSeance(startTime,endTime,price,movie.getId_movie(),screeningRoom.getId_screening_room());
 
             errorLabel.setText("DODANO SEANS");
             errorLabel.setVisible(true);
@@ -170,14 +183,6 @@ public class EmployeeAddSeancesController implements Initializable {
         }
 
         startDatePicker.setDayCellFactory(param -> new DateCell() {
-            @Override
-            public void updateItem(LocalDate date, boolean empty) {
-                super.updateItem(date, empty);
-                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
-            }
-        });
-
-        endDatePicker.setDayCellFactory(param -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
