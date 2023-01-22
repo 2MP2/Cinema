@@ -2,6 +2,8 @@ package com.example.cinema;
 
 import DTO.MovieAndSeance;
 import Database.DatabaseConnection;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class Model {
 
@@ -10,6 +12,7 @@ public class Model {
     private final DatabaseConnection database;
 
     private static MovieAndSeance movieAndSeance;
+    public static Scene stage;
 
     public static MovieAndSeance getMovieAndSeance() {
         return movieAndSeance;

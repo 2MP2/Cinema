@@ -71,10 +71,6 @@ public class EmployeeSeancesController implements Initializable {
         fxmlLoader = new FXMLLoader(getClass().getResource("MainEmployeeView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-        ((Node)actionEvent.getSource()).getScene().getWindow().setHeight(410);
-        ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(630);
-
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -127,11 +123,7 @@ public class EmployeeSeancesController implements Initializable {
                 fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeSeancesView.fxml"));
                 root = fxmlLoader.load();
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-                ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(55*col+250);
-                ((Node) actionEvent.getSource()).getScene().getWindow().setHeight(Math.max(minH, 55 * row + 150));
-
-                scene = new Scene(root);
+                scene = new Scene(root,55*col+250,Math.max(minH, 55 * row + 150));
                 stage.setScene(scene);
                 stage.show();
 

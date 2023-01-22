@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -77,16 +78,14 @@ public class MainCustomerController implements Initializable {
             }
         }
 
+
         fxmlLoader = new FXMLLoader(getClass().getResource("CustomerBuyView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-        ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(55*col+250);
-        ((Node) actionEvent.getSource()).getScene().getWindow().setHeight(Math.max(minH, 55 * row + 150));
-
-        scene = new Scene(root);
+        scene = new Scene(root,55*col+250,Math.max(minH, 55 * row + 150));
         stage.setScene(scene);
         stage.show();
+
     }
     @FXML
     private void goToMyReservations(ActionEvent actionEvent) throws IOException {

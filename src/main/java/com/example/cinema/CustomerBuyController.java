@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -104,11 +105,7 @@ public class CustomerBuyController implements Initializable {
                 fxmlLoader = new FXMLLoader(getClass().getResource("CustomerBuyView.fxml"));
                 root = fxmlLoader.load();
                 stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-                ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(55*col+250);
-                ((Node) actionEvent.getSource()).getScene().getWindow().setHeight(Math.max(minH, 55 * row + 150));
-
-                scene = new Scene(root);
+                scene = new Scene(root,55*col+250,Math.max(minH, 55 * row + 150));
                 stage.setScene(scene);
                 stage.show();
 
@@ -200,16 +197,14 @@ public class CustomerBuyController implements Initializable {
 
     @FXML
     private void goToMenu(ActionEvent actionEvent) throws IOException {
+
         fxmlLoader = new FXMLLoader(getClass().getResource("MainCustomerView.fxml"));
         root = fxmlLoader.load();
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-        ((Node)actionEvent.getSource()).getScene().getWindow().setHeight(420);
-        ((Node)actionEvent.getSource()).getScene().getWindow().setWidth(620);
-
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void setModel(Model model) {
