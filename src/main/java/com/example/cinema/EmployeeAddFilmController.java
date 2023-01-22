@@ -7,15 +7,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class EmployeeAddFilmController implements Initializable {
@@ -59,6 +57,22 @@ public class EmployeeAddFilmController implements Initializable {
 
         is3DChoiceBox.getItems().add("2D");
         is3DChoiceBox.getItems().add("3D");
+
+        getDataPicker.setDayCellFactory(param -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
+            }
+        });
+
+        returnDataPicker.setDayCellFactory(param -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
+            }
+        });
     }
 
     @FXML

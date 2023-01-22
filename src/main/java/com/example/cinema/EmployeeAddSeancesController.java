@@ -2,6 +2,7 @@ package com.example.cinema;
 
 import Model.Movies;
 import Model.ScreeningRooms;
+import Model.Seances;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -112,6 +114,18 @@ public class EmployeeAddSeancesController implements Initializable {
                 return;
         }
 
+        List<Seances> seances = model.getDatabase().getSeancesList();
+        for (Seances s: seances){
+            if(s.getId_screening_room() == screeningRoomChoiceBox.getSelectionModel().getSelectedItem().getId_screening_room()){
+                if(!(timestamp1.after(s.getEnd_time()) || timestamp2.before(s.getStart_time()))){
+                    errorLabel.setText("JUŻ ISTNIEJE SEANSE W TYM TERMINIE");
+                    errorLabel.setVisible(true);
+                    return;
+                }
+
+            }
+        }
+
         try {
             model.getDatabase().insertSeance(timestamp1,timestamp2,price,movie.getId_movie(),screeningRoom.getId_screening_room());
 
@@ -126,15 +140,17 @@ public class EmployeeAddSeancesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        SpinnerValueFactory<Integer> valueFactory1 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,23);
-        SpinnerValueFactory<Integer> valueFactory2 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,59);
-        SpinnerValueFactory<Integer> valueFactory3 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,23);
-        SpinnerValueFactory<Integer> valueFactory4= new SpinnerValueFactory.IntegerSpinnerValueFactory(0,59);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        valueFactory1.setValue(12);
-        valueFactory2.setValue(0);
-        valueFactory3.setValue(12);
-        valueFactory4.setValue(0);
+        SpinnerValueFactory<Integer> valueFactory1 = new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getHours(),23);
+        SpinnerValueFactory<Integer> valueFactory2 = new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getSeconds(),59);
+        SpinnerValueFactory<Integer> valueFactory3 = new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getHours(),23);
+        SpinnerValueFactory<Integer> valueFactory4= new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getSeconds(),59);
+
+        valueFactory1.setValue(23);
+        valueFactory2.setValue(59);
+        valueFactory3.setValue(23);
+        valueFactory4.setValue(59);
 
         startHourSpinner.setValueFactory(valueFactory1);
         startMinuteSpinner.setValueFactory(valueFactory2);
@@ -152,6 +168,22 @@ public class EmployeeAddSeancesController implements Initializable {
         for(ScreeningRooms s:screeningRooms){
             screeningRoomChoiceBox.getItems().add(s);
         }
+
+        startDatePicker.setDayCellFactory(param -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
+            }
+        });
+
+        endDatePicker.setDayCellFactory(param -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
+            }
+        });
     }
 
 }

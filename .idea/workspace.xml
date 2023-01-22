@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="dziala bez duzych testow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerBuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/CustomerBuyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeSeancesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/MainEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerEditCustomerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/CustomerEditCustomerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/MovieAndSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/MovieAndSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/TestReczny.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddFilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddFilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddSeancesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/EmployeeAddSeancesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
       <workItem from="1674053610297" duration="28965000" />
       <workItem from="1674086020776" duration="70000" />
       <workItem from="1674139543164" duration="3345000" />
-      <workItem from="1674350291700" duration="5843000" />
+      <workItem from="1674350291700" duration="10757000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -178,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674142106506</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="dziala bez duzych testow">
+      <created>1674356248892</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674356248892</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +221,8 @@
     <MESSAGE value="nie dzila ostatni select" />
     <MESSAGE value="chyba dziala" />
     <MESSAGE value="działa" />
-    <option name="LAST_COMMIT_MESSAGE" value="działa" />
+    <MESSAGE value="dziala bez duzych testow" />
+    <option name="LAST_COMMIT_MESSAGE" value="dziala bez duzych testow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
