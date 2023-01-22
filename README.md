@@ -8,7 +8,7 @@ create user c##cinema identified by cinema;\
 grant RESOURCE, CONNECT, dba to c##cinema;\
 GRANT ALL PRIVILEGES TO c##cinema;\
 \
-3.Run sql file "cinema.sql" as cinem user \
+3.Run sql file "cinema.sql" as your user or cinema\
 4.Download this project to Intellij \
 5.Add Oracle jdbc to this project \
 6.If you run this code and get error "The Network Adapter could not establish the connection" it probably because line 18 in main need to be diffrent \
