@@ -155,10 +155,10 @@ public class EmployeeAddSeancesController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        SpinnerValueFactory<Integer> valueFactory1 = new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getHours(),23);
-        SpinnerValueFactory<Integer> valueFactory2 = new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getSeconds(),59);
-        SpinnerValueFactory<Integer> valueFactory3 = new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getHours(),23);
-        SpinnerValueFactory<Integer> valueFactory4= new SpinnerValueFactory.IntegerSpinnerValueFactory(timestamp.getSeconds(),59);
+        SpinnerValueFactory<Integer> valueFactory1 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,23);
+        SpinnerValueFactory<Integer> valueFactory2 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,59);
+        SpinnerValueFactory<Integer> valueFactory3 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,23);
+        SpinnerValueFactory<Integer> valueFactory4= new SpinnerValueFactory.IntegerSpinnerValueFactory(0,59);
 
         valueFactory1.setValue(23);
         valueFactory2.setValue(59);
@@ -183,6 +183,14 @@ public class EmployeeAddSeancesController implements Initializable {
         }
 
         startDatePicker.setDayCellFactory(param -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
+            }
+        });
+
+        endDatePicker.setDayCellFactory(param -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
