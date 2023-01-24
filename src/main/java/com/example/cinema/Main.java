@@ -20,6 +20,7 @@ public class Main extends Application {
 
         //dodawanie klasy z danymi do każdego kontrolera
         StartController.setModel(model);
+        StartSeanceController.setModel(model);
 
         RegistrationController.setModel(model);
         LoginController.setModel(model);

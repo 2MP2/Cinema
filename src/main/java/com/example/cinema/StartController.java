@@ -1,6 +1,10 @@
 package com.example.cinema;
 
+import DTO.MovieAndSeance;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,50 +20,43 @@ import java.util.ResourceBundle;
 
 import Model.Seances;
 import Model.Movies;
+import Model.ScreeningRooms;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
 public class StartController implements Initializable{
     private static  Model model;
+    private FXMLLoader fxmlLoader;
     private Stage stage;
     private Scene scene;
     private Parent root;
     @FXML
-    private ListView <String> seancesListView;
+    private ListView <MovieAndSeance> seancesListView;
 
-     private void fillList(){
-        List<Seances> listS = model.getDatabase().getSeancesList();
-        List<Movies> listM = model.getDatabase().getMoviesList();
+    private void goToSeances(MouseEvent actionEvent) throws IOException {
+        int row = 10;
+        int col = 10;
+        int minSceneHeight = 320;
+        int minSceneWidth = 450;
 
-        for (Seances s: listS)
-        {
-            String title = "";
-            int length = 0;
-            char dub_sub_lec = 'X';
-            boolean is3D = false;
+        Model.setMovieAndSeance( seancesListView.getSelectionModel().getSelectedItem());
+        List<ScreeningRooms> screeningRooms = model.getDatabase().getScreeningRoomsList();
 
-            for(Movies m:listM)
-            {
-                if(s.getId_movie()==m.getId_movie())
-                {
-                    title = m.getTitle();
-                    length = m.getLength();
-                    dub_sub_lec = m.getDub_sub_lec();
-                    is3D = m.isIs3D();
-                }
+        for (ScreeningRooms sr: screeningRooms){
+            if(sr.getId_screening_room() == Model.getMovieAndSeance().getSeance().getId_screening_room()){
+                row = sr.getAmount_of_rows();
+                col = sr.getAmount_of_columns();
+                break;
             }
-
-            String full = title + " "+ length + "min "
-                    + Math.round(s.getTicket_price() * 100.00)/100.00 + "zł "
-                    + s.getStart_time().getHours() + ":" + ((s.getStart_time().getMinutes()<10) ? "0" : "") + s.getStart_time().getMinutes() + "-"
-                    + s.getEnd_time().getHours() + ":" + s.getEnd_time().getMinutes()
-                    + ((Character.toUpperCase(dub_sub_lec) == 'D') ? " DUBBING"
-                    : ((Character.toUpperCase(dub_sub_lec) == 'S') ? " NAPISY"
-                    : ((Character.toUpperCase(dub_sub_lec) == 'L') ? " LECTOR" : " XXX")))
-                    + ((is3D) ? " 3D" : " 2D");
-
-            seancesListView.getItems().add(full);
         }
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("StartSeanceView.fxml"));
+        root = fxmlLoader.load();
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root,Math.max(minSceneWidth, 55*col+50),Math.max(minSceneHeight, 55 * row + 150));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -82,8 +79,35 @@ public class StartController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        fillList();
+
+        seancesListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                try {
+                    goToSeances(mouseEvent);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+        List<Seances> listS = model.getDatabase().getSeancesList();
+        List<Movies> listM = model.getDatabase().getMoviesList();
+
+        for (Seances s: listS)
+        {
+            for(Movies m:listM)
+            {
+                if(s.getId_movie()==m.getId_movie())
+                {
+                    MovieAndSeance movieAndSeance = new MovieAndSeance(m,s);
+                    seancesListView.getItems().add(movieAndSeance);
+                    break;
+                }
+            }
+        }
     }
+
 
     public static void setModel(Model model) {
         if(StartController.model != null)
