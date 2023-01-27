@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="usunięto blokade na godziny w dodawaniu seansow. Juz nie che mi sie z tym bawić">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/StartSeanceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/StartSeanceView.fxml" afterDir="false" />
+    <list default="true" id="86dd9ada-62dc-4481-ac7c-62deac10975b" name="Changes" comment="Dodano widok i klase odpowiadajaca za widok siedzen po przejsciu z klasy startowej">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cinema/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cinema/StartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainCustomerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/MainCustomerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cinema/RegistrationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cinema/RegistrationView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +92,8 @@
       <workItem from="1674350291700" duration="10772000" />
       <workItem from="1674401238247" duration="330000" />
       <workItem from="1674414610099" duration="7949000" />
-      <workItem from="1674555482550" duration="4387000" />
+      <workItem from="1674555482550" duration="5285000" />
+      <workItem from="1674841037471" duration="7119000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1673993225266</created>
@@ -221,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674556362023</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Dodano widok i klase odpowiadajaca za widok siedzen po przejsciu z klasy startowej">
+      <created>1674560196955</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1674560196955</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +267,8 @@
     <MESSAGE value="dziala bez duzych testow" />
     <MESSAGE value="dodano komentarze i zmieniono pare nazw ziennych na bardziej czytelne" />
     <MESSAGE value="usunięto blokade na godziny w dodawaniu seansow. Juz nie che mi sie z tym bawić" />
-    <option name="LAST_COMMIT_MESSAGE" value="usunięto blokade na godziny w dodawaniu seansow. Juz nie che mi sie z tym bawić" />
+    <MESSAGE value="Dodano widok i klase odpowiadajaca za widok siedzen po przejsciu z klasy startowej" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodano widok i klase odpowiadajaca za widok siedzen po przejsciu z klasy startowej" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -9,7 +9,7 @@
    <children>
       <Label fx:id="idLabel" layoutX="14.0" layoutY="14.0" text="Zalogowales sie jako KLIENT" />
       <Button layoutX="451.0" layoutY="187.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="130.0" text="Wyloguj się" />
-      <Button fx:id="goToBuyTicket" disable="true" layoutX="451.0" layoutY="44.0" mnemonicParsing="false" onAction="#goToBuyTicket" prefHeight="26.0" prefWidth="130.0" text="Kup/Rezerwój bilet" />
+      <Button fx:id="goToBuyTicket" disable="true" layoutX="451.0" layoutY="44.0" mnemonicParsing="false" onAction="#goToBuyTicket" prefHeight="26.0" prefWidth="130.0" text="Kup/Rezerwuj bilet" />
       <Button fx:id="goToMyReservations" layoutX="451.0" layoutY="116.0" mnemonicParsing="false" onAction="#goToMyReservations" prefHeight="26.0" prefWidth="130.0" text="Moje rezerwacje" />
       <Button fx:id="goToEditCustomer" layoutX="451.0" layoutY="151.0" mnemonicParsing="false" onAction="#goToEditCustomer" prefHeight="26.0" prefWidth="130.0" text="Edytcja danych konta" />
       <ListView fx:id="seancesListView" layoutX="14.0" layoutY="44.0" prefHeight="330.0" prefWidth="426.0" />

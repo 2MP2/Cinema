@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,8 +45,8 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         stage.setTitle("Kino");
         stage.setResizable(false);
-        //Image logo = new Image("C:\\Users\\48602\\Desktop\\Sem 5\\BazyDanych2\\Kod\\logo.png");
-        //stage.getIcons().add(logo); //dodawanie loga
+        Image logo = new Image("C:\\Users\\48602\\Desktop\\Sem 5\\BazyDanych2\\Kod\\logo.png");
+        stage.getIcons().add(logo); //dodawanie loga
         stage.setScene(scene);
         stage.show();
     }
