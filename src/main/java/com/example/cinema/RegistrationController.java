@@ -29,6 +29,20 @@ public class RegistrationController{
     private void registration(ActionEvent actionEvent) throws IOException {
         boolean isReg = false;
 
+        if(loginTextField.getText().length()<6)
+        {
+            errorLabel.setVisible(true);
+            errorLabel.setText("Login jest za krótki");
+            return;
+        }
+
+        if(passwordTextField.getText().length()<6)
+        {
+            errorLabel.setVisible(true);
+            errorLabel.setText("Hasło jest za krótki");
+            return;
+        }
+
         try {
             Integer.parseInt(phoneTextField.getText());
             if(phoneTextField.getText().length()!=9){
@@ -36,7 +50,7 @@ public class RegistrationController{
             }
         }catch (NumberFormatException  e){
             errorLabel.setVisible(true);
-            errorLabel.setText("Numer zawiera niedozwoloneznaki");
+            errorLabel.setText("ZŁY NUMER");
             return;
         }catch (Exception e){
             errorLabel.setVisible(true);

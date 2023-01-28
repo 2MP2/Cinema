@@ -58,6 +58,34 @@ public class EmployeeAddEmployeeController implements Initializable {
 
         try {
 
+            if(loginTextField.getText().length()<6)
+            {
+                errorLabel.setVisible(true);
+                errorLabel.setText("Login jest za krótki");
+                return;
+            }
+
+            if(passwordTextField.getText().length()<6)
+            {
+                errorLabel.setVisible(true);
+                errorLabel.setText("Hasło jest za krótki");
+                return;
+            }
+
+            if(nameTextField.getText().isEmpty())
+            {
+                errorLabel.setVisible(true);
+                errorLabel.setText("Brak imienia");
+                return;
+            }
+
+            if(surnameTextField.getText().isEmpty())
+            {
+                errorLabel.setVisible(true);
+                errorLabel.setText("Brak nazwiska");
+                return;
+            }
+
             try {
                 Integer.parseInt(phoneTextField.getText());
                 if(phoneTextField.getText().length()!=9){
@@ -65,7 +93,7 @@ public class EmployeeAddEmployeeController implements Initializable {
                 }
             }catch (NumberFormatException  e){
                 errorLabel.setVisible(true);
-                errorLabel.setText("Numer zawiera niedozwoloneznaki");
+                errorLabel.setText("ZŁY NUMER");
                 return;
             }catch (Exception e){
                 errorLabel.setVisible(true);

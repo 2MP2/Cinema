@@ -91,15 +91,17 @@ public class EmployeeAddSeancesController implements Initializable {
         Movies movie;
         ScreeningRooms screeningRoom;
 
-        try {
-            movie = filmChoiceBox.getValue();
-            screeningRoom = screeningRoomChoiceBox.getValue();
+        movie = filmChoiceBox.getValue();
+        screeningRoom = screeningRoomChoiceBox.getValue();
 
-        }catch (Exception e){
+        if(movie == null || screeningRoom == null)
+        {
             errorLabel.setText("Nie wybrano filmu bądź sali");
             errorLabel.setVisible(true);
             return;
         }
+
+
 
         Calendar cal =Calendar.getInstance();
         cal.setTime(startTime);

@@ -80,8 +80,11 @@ public class MainEmployeeController implements Initializable {
                 idLabel.setText("Kierownik ID: " + model.getId());
                 editEmployeeButton.setVisible(true);
             }
-            else
+            else{
+                editEmployeeButton.setVisible(false);
                 idLabel.setText("Pracownik ID: " + model.getId());
+            }
+
         } catch (SQLException e) {
             System.out.println("Błąd");
             editEmployeeButton.setVisible(false);

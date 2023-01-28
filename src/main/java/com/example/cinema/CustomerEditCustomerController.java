@@ -46,13 +46,11 @@ public class CustomerEditCustomerController implements Initializable {
             if(!(nameTextField.getText() == null || nameTextField.getText().trim().isEmpty())){
                 currentName.setText(nameTextField.getText());
                 isChanged = true;
-                System.out.println("33333");
             }
 
             if(!(surnameTextField.getText() == null || surnameTextField.getText().trim().isEmpty())){
                 currentSurname.setText(surnameTextField.getText());
                 isChanged = true;
-                System.out.println("2222");
             }
 
             if(!(teleTextField.getText() == null || teleTextField.getText().trim().isEmpty())){
@@ -79,6 +77,7 @@ public class CustomerEditCustomerController implements Initializable {
             if(passwordField.getText() == null || passwordField.getText().trim().isEmpty()){
                 if(isChanged) {
                     model.getDatabase().changeCustomer(model.getId(), "", currentName.getText(), currentSurname.getText(), currentTele.getText());
+                    isChanged = true;
                 }
             }else{
                 model.getDatabase().changeCustomer(model.getId(),passwordField.getText(),currentName.getText(),currentSurname.getText(),currentTele.getText());

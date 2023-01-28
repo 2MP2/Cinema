@@ -78,6 +78,14 @@ public class EmployeeAddFilmController implements Initializable {
     @FXML
     private void addFilm(ActionEvent actionEvent) throws IOException{
         int min;
+
+        if(titleTextArea.getText().isEmpty())
+        {
+            errorLabel.setText("Brak nazwy filmu");
+            errorLabel.setVisible(true);
+            return;
+        }
+
         try {
             min = Integer.parseInt(lengthTextArea.getText());
         }catch (Exception e )
